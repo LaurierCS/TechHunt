@@ -1,10 +1,9 @@
-# Pod 1 - Project Wendigo - Sentiment Analysis Project
-This is the repository your team will collaborate on and upload code progress to. While it is managed by your team, each code "Merge Request" (aka Pull Request PR)to mast will need to be approved by at least two teammates to be approved. 
+# Pod 2 - Project Wampus - Open Source Kickstarter Project
+This is the repository your team will collaborate on and upload code progress to. While it is managed by your team, each code "Merge Request" (aka Pull Request PR) to master will need to be approved by at least two teammates to be approved. 
 
 
-*Outline created by Robert*
-
-*Disclaimer: I have little-to-no experience with AI/ML so I will here learning along with you* 🙂
+*Outline created by Jagveer*
+ 🙂
 
 # About
 
