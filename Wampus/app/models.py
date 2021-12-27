@@ -1,6 +1,7 @@
 # Imports
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.fields import CharField
 
 # Profile Model
 class Profile(models.Model):
@@ -79,3 +80,6 @@ class Project(models.Model):
     # Project Attributes
     def __str__(self):
         return self.name
+
+class TestModel(models.Model):
+    note = models.CharField(null=True, max_length=200)
