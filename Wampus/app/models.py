@@ -81,5 +81,3 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
-class TestModel(models.Model):
-    note = models.CharField(null=True, max_length=200)
