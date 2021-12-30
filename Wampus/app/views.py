@@ -43,7 +43,7 @@ def homepage_view(request):
     return render(request, template_name, context)
 
 
-def profile_view(request):
+def profilepage_view(request):
     context = {}
     template_name = 'login.html'
 

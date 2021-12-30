@@ -18,29 +18,11 @@ from django.urls import path
 from app import views
 
 urlpatterns = [
-
-    # Hey Dhavani, obi leaving this msg
-    # here are the pages we need urls for:
-
-    # Login
-    # Registration
-    # Homepage
-    # Profile Page
-    # Individual Project Page
-
-
-    # Make sure to remove or otherwise change these urls
-    # to match the views.py file
     path('', views.homepage_view),
     path('admin/', admin.site.urls),
-    path('login/', views.login),
-    path('registration/', views.registration),
-    path('settings/', views.settings),
-    path('user-profile/', views.userProfile),
-    path('all-favourites/', views.allFavourites),
-    path('create-project/', views.createProject),
-    path('project/', views.project),
-    path('<tag>-projects/', views.filteredProjects),
-
-
+    path('login/', views.login_view),
+    path('register/', views.register_view),
+    path('homepage/', views.homepage_view),
+    path('profilepage/', views.profilepage_view),
+    path('project/', views.project_view),
 ]
