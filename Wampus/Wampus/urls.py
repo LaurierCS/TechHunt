@@ -15,10 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+from app import views
 
 urlpatterns = [
-    path('', views.homepage),
+
+    # Hey Dhavani, obi leaving this msg
+    # here are the pages we need urls for:
+
+    # Login
+    # Registration
+    # Homepage
+    # Profile Page
+    # Individual Project Page
+
+
+    # Make sure to remove or otherwise change these urls
+    # to match the views.py file
+    path('', views.homepage_view),
     path('admin/', admin.site.urls),
     path('login/', views.login),
     path('registration/', views.registration),
@@ -28,4 +41,6 @@ urlpatterns = [
     path('create-project/', views.createProject),
     path('project/', views.project),
     path('<tag>-projects/', views.filteredProjects),
+
+
 ]
