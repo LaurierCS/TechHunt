@@ -20,13 +20,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('admin/', admin.site.urls), # Do Not Remove
     path('homepage/', views.homepage_view),
     path('login/', views.login_view),
     path('register/', views.register_view),
     path('project/', views.project_view),
-    path('profile/', views.profilePage_view),
-
+    path('profile/', views.profilepage_view),
 ]
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
