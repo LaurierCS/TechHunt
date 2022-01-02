@@ -16,14 +16,17 @@ class Profile(models.Model):
 
     # Profile Attributes
     def __str__(self):
-        return self.first_name + " " + self.last_name
+        try:
+            return self.first_name + " " + self.last_name # Return profile name
+        except:
+            return self.user.username # Return username if profile name is not set
 
 # Project Model 
 class Project(models.Model):
 
     # Project Fields
-    name = models.CharField(max_length=100, null=True)
-    description = models.CharField(max_length=250, null=True)
+    name = models.CharField(max_length=100, null=True, required=True)
+    description = models.CharField(max_length=250, null=True, blank=True)
     rating = models.IntegerField(default=0, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True)
