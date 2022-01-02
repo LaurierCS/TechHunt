@@ -1,16 +1,54 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
+from .forms import RegisterForm
 
 def login_view(request):
-    context = {}
+
     template_name = 'login.html'
 
-    return render(request, template_name, context)
+    # If the user is already logged in, redirect to homepage
+    if request.user.is_authenticated:
+        return redirect('/homepage/')
+
+    # Get user input from the login form
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        # Authenticate the user
+        user = authenticate(username=username, password=password)
+
+        # If the user is authenticated, log them in
+        if user is not None:
+            login(request, user)
+            return redirect('/homepage/')
+        
+        else: # If the user is not authenticated, show an error message
+            messages.error(request, 'Invalid username or password')
+    
+    return render(request, template_name)
 
 
 def register_view(request):
-    context = {}
+    
     template_name = 'register.html'
 
+    # Create form object
+    form = RegisterForm(request.POST)
+
+    # If the form is valid, save the user
+    if form.is_valid():
+        user = form.save()
+
+        # Log the user in
+        login(request, user)
+
+        # Redirect to homepage    
+        return redirect('/homepage/')
+    
+    context = {'form': form}
+    
     return render(request, template_name, context)
 
 
