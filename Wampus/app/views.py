@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from .forms import RegisterForm
+from .models import Favorite
+from django.contrib.auth.decorators import login_required
 
 def login_view(request):
 
@@ -104,3 +106,16 @@ def project_view(request):
     template_name = 'project.html'
 
     return render(request, template_name, context)
+
+@login_required(login_url='/login/')
+def favoritepage_view(request):
+
+    favorite_object = Favorite.objects.filter(user='Profile')
+
+    context = {
+        'favorite_object':favorite_object
+    }
+
+    template_name = 'favorite.html'
+
+    return render(request,template_name, context)
