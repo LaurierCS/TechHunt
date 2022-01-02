@@ -33,6 +33,12 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
+class Favorite(models.Model):
+
+    # Favorite Fields
+    profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
+    project = models.OneToOneField('Project', on_delete=models.CASCADE)
+
 # Tag Model
 class Tag(models.Model):
     
@@ -51,4 +57,3 @@ class Tag(models.Model):
         # Tag Attributes
         def __str__(self):
             return self.name
-
