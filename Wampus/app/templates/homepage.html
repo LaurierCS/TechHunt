@@ -4,62 +4,329 @@
         <meta charset="uft-8">
         <title>WAMPUS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    	<nav style="background:#A1B6D7;padding:1px;">
-          <h4 style="text-align:center">Navbar</h4>
-		</nav>
-    </head>
-    <style>
-    	* {
-          box-sizing: border-box;
-        }
-    </style>
-    <body>
-        <h1>Welcome back {user}!</h1>
-        <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 24px;color: #35474D;"><strong>Project Carrousel</strong></p>
-        <div class="container">
-            <div class="carrousel">
-              <div class="projectImages"></div>
-              <div class="projectImages"></div>
-              <div class="projectImages"></div>
-              <div class="projectImages"></div>
-            </div>
-         	<div class="tags">Tags
-                 <hr style="border-color: #000000;margin: 25px 10px;">
-             </div>
-             <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 24px;color: #35474D;"><strong>Project Carrousel</strong></p>
-            <div class="carrousel">
-              <div class="projectImages"></div>
-              <div class="projectImages"></div>
-              <div class="projectImages"></div>
-              <div class="projectImages"></div>
-            </div>
+    </head> 
+    <div class="container">
+        <div class="left">
+          <div class="logo"></div>
+          <h1 style="margin-top: 140px; margin-left: 40px;color: #0098FE;">Home</h1>
+          <h1 style="margin-left: 40px;">Profile</h1>
         </div>
-        <style>
-            .carrousel {
-            	border: 1px solid #4D6E79;
-                width: 78%;
-                float: left;
-                padding: 30px;
-                border-radius: 8px;
-            }
-            .projectImages {
-                position: relative;
-                margin: 1%;
-                float: left;
-              	width: 150px;
-              	height: 150px;
-              	background-color: lightgrey;
-                border-radius: 30px;
-         	}
-            .tags {
-            	position: relative;
-                float: right;
-                width: 20%;
-                height: 550px;
-                background-color: #9CAADD;
-                border-radius: 15px;
-            }
-         </style>
-    </body>
+        <div class="main">
+          <input type="text" placeholder="Search Bar">
+          <div class="profileTag">
+            <div class="profileImg"></div>
+          </div>
+          <div class="rightClassContainer">
+            <div class="projects">
+              <h1 style="margin-left: 10px;">Your Projects</h1>
+              <div class="projectsContainer">
+                <div class="myproject-card">
+                  <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
+                  <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
+                </div>
+                <div class="myproject-card">
+                  <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
+                  <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
+                </div>
+                <div class="myproject-card">
+                  <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
+                  <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
+                </div>
+              </div>
+            </div>
+            <div class="favourites">
+              <h1 style="margin-left: 10px;">Favourites</h1>
+              <div class="favouritesContainer">
+                <div class="project-card">
+                  <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
+                  <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
+                  <button type="button" class="rateproject-button">Rate this project</button>
+                  <button type="button" class="joinrequest-button">Request to join team</button>
+                </div>
+                <div class="project-card">
+                  <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
+                  <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
+                  <button type="button" class="rateproject-button">Rate this project</button>
+                  <button type="button" class="joinrequest-button">Request to join team</button>
+                </div>
+              </div>
+            </div>
+            <div class="community">
+              <h1 style="margin-left: 10px;">Community</h1>
+              <div class="communityContainer">
+                <div class="tagsContainer">
+                  <div class="tags"></div>
+                  <div class="tags"></div>
+                  <div class="tags"></div>
+                  <div class="tags"></div>
+                  <div class="tags"></div>
+                  <div class="tags"></div>
+                  <div class="tags"></div>
+                </div>
+                <div class="communityProjects">
+                  <div class="project-card">
+                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
+                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
+                    <button type="button" class="rateproject-button">Rate this project</button>
+                    <button type="button" class="joinrequest-button">Request to join team</button>
+                  </div>
+                  <div class="project-card">
+                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
+                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
+                    <button type="button" class="rateproject-button">Rate this project</button>
+                    <button type="button" class="joinrequest-button">Request to join team</button>
+                  </div>
+                  <div class="project-card">
+                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
+                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
+                    <button type="button" class="rateproject-button">Rate this project</button>
+                    <button type="button" class="joinrequest-button">Request to join team</button>
+                  </div>
+                  <div class="project-card">
+                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
+                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
+                    <button type="button" class="rateproject-button">Rate this project</button>
+                    <button type="button" class="joinrequest-button">Request to join team</button>
+                  </div>
+                  <div class="project-card">
+                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
+                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
+                    <button type="button" class="rateproject-button">Rate this project</button>
+                    <button type="button" class="joinrequest-button">Request to join team</button>
+                  </div>
+                  <div class="project-card">
+                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
+                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
+                    <button type="button" class="rateproject-button">Rate this project</button>
+                    <button type="button" class="joinrequest-button">Request to join team</button>
+                  </div>
+                  <div class="project-card">
+                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
+                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
+                    <button type="button" class="rateproject-button">Rate this project</button>
+                    <button type="button" class="joinrequest-button">Request to join team</button>
+                  </div>
+                  <div class="project-card">
+                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
+                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
+                    <button type="button" class="rateproject-button">Rate this project</button>
+                    <button type="button" class="joinrequest-button">Request to join team</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <b style="color: #EEEEEE;margin-left: 90px;display:inline-block;margin-top: 50px;">About</b>
+          <b style="color: #EEEEEE;margin-left: 40px;display:inline-block;">The Team</b>
+          <b style="color: #EEEEEE;margin-left: 890px;display:inline-block;">Made with Love LCS Pod 2</b>
+        </div>
+    </div>
+    <style>
+      body, html {
+        width: 100%;
+        height: 130%;
+        margin: 0;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .left {
+        width: 20%;
+        height: 100%;
+        float: left;
+        background-color: #F4F4F4;
+        border-collapse: collapse;
+      }
+
+      .main {
+        width: 80%;
+        height: 100%;
+        float: left;
+        background-color: #FFFFFF;
+        border-collapse: collapse;
+      }
+
+      .footer {
+        width: 100%;
+        height: 15%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display:block;
+        background-color: #6000FE;
+        border-collapse: collapse;
+      }
+
+      .main input[type=text] {
+        float: left;
+        padding: 6px 20px 6px;
+        width: 50%;
+        background-color: #EEEEEE;
+        border: #EEEEEE;
+        border-radius: 30px;
+        margin-top: 35px;
+        margin-left: 26px;
+        font-size: 14px;
+      }
+
+      .logo {
+        float: left;
+        width: 70px;
+        height: 70px;
+        background-color: #0098FE;
+        margin-top: 35px;
+        margin-left: 40px;
+      }
+
+      .profileTag {
+        float: right;
+        width: 100px;
+        height: 35px;
+        background-color: #6000FE;
+        margin-top: 33px;
+        margin-right: 190px;
+        border-radius: 5px;
+      }
+
+      .profileImg {
+        float: left;
+        width: 35px;
+        height: 35px;
+        background-color: #c0bdbd;
+      }
+
+      .rightClassContainer {
+        width: 90%;
+        height: 80%;
+        margin-top: 99px;
+        margin-left: 26px;
+      }
+
+      .projects {
+        width: 65%;
+        height: 30%;
+        float: left;
+        border-collapse: collapse;
+      }
+
+      .favourites {
+        width: 34%;
+        height: 100%;
+        float: right;
+        border-collapse: collapse;
+      }
+
+      .community {
+        width: 65%;
+        height: 70%;
+        float: left;
+        border-collapse: collapse;
+      }
+
+      .projectsContainer {
+        width: 100%;
+        height: 78%;
+        float: left;
+        border:1px solid #EEEEEE;
+        border-collapse: collapse;
+        border-radius: 5px;
+        overflow-y: auto;
+      }
+
+      .favouritesContainer {
+        width: 100%;
+        height: 95%;
+        float: left;
+        border:1px solid #EEEEEE;
+        border-collapse: collapse;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
     
+      .communityContainer {
+        width: 100%;
+        height: 93%;
+        float: left;
+        border-collapse: collapse;
+      }
+
+      .tagsContainer {
+        width: 100%;
+        height: 8%;
+        border:1px solid #EEEEEE;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+      
+      .communityProjects {
+        width: 100%;
+        height: 90%;
+        margin-top: 11px;
+        border:1px solid #EEEEEE;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+
+      .myproject-card {
+        float: left;
+        width: 300px;
+        height: 200px;
+        background-color: #EEEEEE;
+        margin-top: 25px;
+        margin-left: 25px;
+        margin-bottom: 25px;
+        border-radius: 5px;
+      }
+
+      .project-card {
+        float: left;
+        width: 300px;
+        height: 200px;
+        background-color: #EEEEEE;
+        margin-top: 25px;
+        margin-left: 25px;
+        margin-bottom: 25px;
+        border-radius: 5px;
+      }
+
+      .tags {
+        float: left;
+        width: 75px;
+        height: 29px;
+        border: 2px solid #0098FE;
+        margin-top: 11px;
+        margin-left: 10px;
+        border-radius: 5px;
+      }
+
+      .rateproject-button {
+        float: left;
+        width: 250px;
+        height: 24px;
+        text-align: center;
+        color: #FFFFFF;
+        border: 2px solid #0098FE;
+        background-color: #0098FE;
+        margin-top: 40px;
+        margin-left: 25px;
+        border-radius: 21px;
+      }
+
+      .joinrequest-button {
+        float: left;
+        width: 250px;
+        height: 24px;
+        text-align: center;
+        color: #0098FE;
+        border: 2px solid #0098FE;
+        margin-top: 5px;
+        margin-left: 25px;
+        border-radius: 21px;
+      }
+    </style> 
 </html>
