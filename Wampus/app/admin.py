@@ -1,6 +1,6 @@
 # Imports
 from django.contrib import admin
-from .models import Profile, Project, Tag, Favorite
+from .models import Profile, Project, Tag, Favorite, Comment
 
 # Register Profile Model
 admin.site.register(Profile)
@@ -14,3 +14,5 @@ admin.site.register(Favorite)
 # Register Tag Model
 admin.site.register(Tag)
 
+# Register Comment Model
+admin.site.register(Comment)
