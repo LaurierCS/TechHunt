@@ -25,7 +25,7 @@ class Profile(models.Model):
 class Project(models.Model):
 
     # Project Fields
-    name = models.CharField(max_length=100, null=True, required=True)
+    name = models.CharField(max_length=100, null=True)
     description = models.CharField(max_length=250, null=True, blank=True)
     rating = models.IntegerField(default=0, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
