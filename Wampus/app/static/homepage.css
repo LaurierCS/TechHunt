@@ -1,0 +1,204 @@
+body, html {
+    width: 100%;
+    height: 130%;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.left {
+    width: 20%;
+    height: 100%;
+    float: left;
+    background-color: #F4F4F4;
+    border-collapse: collapse;
+}
+
+.main {
+    width: 80%;
+    height: 100%;
+    float: left;
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+}
+
+.footer {
+    width: 100%;
+    height: 15%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display:block;
+    background-color: #6000FE;
+    border-collapse: collapse;
+}
+
+.main input[type=text] {
+    float: left;
+    padding: 6px 20px 6px;
+    width: 50%;
+    background-color: #EEEEEE;
+    border: #EEEEEE;
+    border-radius: 30px;
+    margin-top: 35px;
+    margin-left: 26px;
+    font-size: 14px;
+}
+
+.logo {
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-color: #0098FE;
+    margin-top: 35px;
+    margin-left: 40px;
+}
+
+.profileTag {
+    float: right;
+    width: 100px;
+    height: 35px;
+    background-color: #6000FE;
+    margin-top: 33px;
+    margin-right: 190px;
+    border-radius: 5px;
+}
+
+.profileImg {
+    float: left;
+    width: 35px;
+    height: 35px;
+    background-color: #c0bdbd;
+}
+
+.rightClassContainer {
+    width: 90%;
+    height: 80%;
+    margin-top: 99px;
+    margin-left: 26px;
+}
+
+.projects {
+    width: 65%;
+    height: 30%;
+    float: left;
+    border-collapse: collapse;
+}
+
+.favourites {
+    width: 34%;
+    height: 100%;
+    float: right;
+    border-collapse: collapse;
+}
+
+.community {
+    width: 65%;
+    height: 70%;
+    float: left;
+    border-collapse: collapse;
+}
+
+.projectsContainer {
+    width: 100%;
+    height: 78%;
+    float: left;
+    border:1px solid #EEEEEE;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+.favouritesContainer {
+    width: 100%;
+    height: 95%;
+    float: left;
+    border:1px solid #EEEEEE;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.communityContainer {
+    width: 100%;
+    height: 93%;
+    float: left;
+    border-collapse: collapse;
+}
+
+.tagsContainer {
+    width: 100%;
+    height: 8%;
+    border:1px solid #EEEEEE;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+  
+.communityProjects {
+    width: 100%;
+    height: 90%;
+    margin-top: 11px;
+    border:1px solid #EEEEEE;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.myproject-card {
+    float: left;
+    width: 300px;
+    height: 200px;
+    background-color: #EEEEEE;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.project-card {
+    float: left;
+    width: 300px;
+    height: 200px;
+    background-color: #EEEEEE;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.tags {
+    float: left;
+    width: 75px;
+    height: 29px;
+    border: 2px solid #0098FE;
+    margin-top: 11px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.rateproject-button {
+    float: left;
+    width: 250px;
+    height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    border: 2px solid #0098FE;
+    background-color: #0098FE;
+    margin-top: 40px;
+    margin-left: 25px;
+    border-radius: 21px;
+}
+
+.joinrequest-button {
+    float: left;
+    width: 250px;
+    height: 24px;
+    text-align: center;
+    color: #0098FE;
+    border: 2px solid #0098FE;
+    margin-top: 5px;
+    margin-left: 25px;
+    border-radius: 21px;
+}
