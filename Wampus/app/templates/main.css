@@ -1,50 +1,125 @@
+/*code should be in static/main.css
+  this is for testing
+*/
+
+/*Site-wide styling*/
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Inter";
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  font-size: 14px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: bold;
 }
 
 .site-container {
-    width: 100%;
-    height: fit-content;
-    min-height: 100vh;
-    /* background-color: rgb(218, 103, 141); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: fit-content;
+  display: flex;
 }
 
-.login-box {
-    height: 60vh;
-    width: 400px;
-    /* background-color: rgb(32, 148, 12); */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+.left {
+  width: 20%;
+  height: 100%;
+  float: left;
+  background-color: #f4f4f4;
+  border-collapse: collapse;
+}
+
+/* Components*/
+.contentBox {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  border: solid #eeeeee 1px;
+  overflow-x: auto;
+}
+
+.projectCard {
+}
+
+.inputField {
+}
+
+.button1 {
+  width: 200px;
+  height: 50px;
+  padding: 1%;
+  float: left;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid #0098fe;
+  background-color: #0098fe;
+  border-radius: 21px;
+}
+
+.button2 {
+}
+
+.button3 {
+}
+
+.button4 {
+}
+
+.tag {
 }
 
 .logo {
-    width: 100px;
-    height: 100px;
-    background: blue;
-    border-radius: 10px;
-    margin-bottom: 30px;
+  float: left;
+  width: 70px;
+  height: 70px;
+  background-color: #0098fe;
+  margin-top: 35px;
+  margin-left: 40px;
 }
 
-.input-field {
-    font-size: 15px;
-    margin: 0 0 10px 0;
-    border-radius: 20px;
+/*Component modifiers*/
+.contentBox--login {
+  width: 500px;
+  height: 300px;
+  margin: 100px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #0098fe;
+  border: solid #0098fe 4px;
 }
 
-.submit-btn {
-    padding: 10px;
-    font-size: 14px;
-    color: black;
-    background: white;
-    border-radius: 15px;
+.inputField--login {
+  width: 70%;
+  height: 15%;
+  margin: 0 0 20px 0;
+  font-size: 23px;
+  color: #0098fe;
+  border-radius: 20px;
+  border: solid #0098fe 3px;
+}
+
+.inputField--login::placeholder {
+  opacity: 1;
+  text-align: center;
+}
+
+.button1--submit {
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 15px;
 }
