@@ -15,29 +15,18 @@
 <body>
     <div class="siteContainer">
         <!-- Side Panel -->
-        <div class="sidePanel">
-            <div class="logo">
-                
-            </div>
-            <!-- Links to other Pages ... Need to update with django references to links-->
-            <h1 class="sidePanel__links"><a href="">Home</a></h1>
-            <h1 class="sidePanel__links"><a href="">Profile</a></h1>
-            <h1 class="sidePanel__links"><a href="">Create a Project</a></h1>
-        </div>
+        {% include "components\sidePanelComponent.html" %}
         <!-- End of Side Panel -->
 
         <!-- Main Page Content -->
         <div class="main">
             <div class="topBar">
                 <input type="text" class="inputField inputField--search" placeholder="Search Projects">
-                <div class="profile">
-                    <!-- Need to update to django reference to current user -->
-                    <h2 class="profile__name">Hey, @Username</h2>
-                </div>
+                {% include "components\profileComponent.html" %}
             </div>
             <div class="pageContent">
-                {% block profile %}
-                {% endblock profile %}
+                {% block content %}
+                {% endblock content %}
             </div>
         </div>
         <!-- End of Main Page Content -->

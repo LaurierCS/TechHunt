@@ -1,0 +1,8 @@
+{% if user.is_authenticated %}
+    <div class="profile">
+        <!-- Need to update to django reference to current user -->
+        <h2 class="profile__name">Hey, @{{ user.username }}</h2>
+    </div>
+{% else %}
+    <a class="btn" href="#">Login</a>
+{% endif %}
