@@ -18,6 +18,7 @@ from django.urls import path
 from app import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns # For Development
 
 urlpatterns = [
     path('admin/', admin.site.urls), # Do Not Remove
@@ -29,6 +30,11 @@ urlpatterns = [
     path('about-us/', views.aboutus_view)
 ]
 
+"""
+Development Purposes (DEBUG = True)
+"""
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()
