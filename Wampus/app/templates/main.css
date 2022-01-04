@@ -8,118 +8,98 @@
   font-family: "Inter";
 }
 
-body {
-  font-size: 14px;
+body,
+html {
+  width: 100%;
+  height: 100%;
   margin: 0;
+  font-size: 14px;
 }
 
-h1 {
-  font-size: 40px;
-  font-weight: bold;
+a {
+  text-decoration: none;
 }
 
-h2 {
-  font-size: 35px;
-}
-
-h3 {
-  font-size: 17px;
-  font-weight: bold;
-}
-
-.site-container {
+.siteContainer {
   width: 100%;
   height: fit-content;
+  min-height: 90%;
   display: flex;
+  background-color: #ffffff;
 }
+/*End*/
 
-.left {
-  width: 20%;
-  height: 100%;
+/*Base elements*/
+.sidePanel {
+  width: 18%;
+  height: 90vh;
+  padding: 2% 2%;
+  position: fixed;
   float: left;
-  background-color: #f4f4f4;
+  background-color: #eeeeee;
   border-collapse: collapse;
 }
 
-/* Components*/
-.contentBox {
-  width: 300px;
-  height: 300px;
-  border-radius: 10px;
-  border: solid #eeeeee 1px;
-  overflow-x: auto;
+.sidePanel__links {
+  font-weight: normal;
 }
 
-.projectCard {
+.sidePanel__links a {
+  color: #000000;
 }
 
-.inputField {
+.sidePanel__links:hover {
+  opacity: 70%;
 }
 
-.button1 {
-  width: 200px;
-  height: 50px;
-  padding: 1%;
-  float: left;
+.main {
+  height: fit-content;
+  width: 82%;
+  flex-grow: 1;
+}
+
+.footer {
+  width: 100%;
+  height: 10%;
+  max-height: 10%;
+  position: fixed;
+  bottom: 0;
   color: #ffffff;
-  text-decoration: none;
-  text-align: center;
-  border: 2px solid #0098fe;
-  background-color: #0098fe;
-  border-radius: 21px;
+  background-color: #6000fe;
 }
 
-.button2 {
+.footer__links {
+  width: fit-content;
+  margin: auto 4% auto 0;
+  font-weight: normal;
+  position: relative;
+  left: 3%;
 }
 
-.button3 {
+.footer__links a {
+  color: #ffffff;
 }
 
-.button4 {
+.footer__links:hover {
+  opacity: 70%;
 }
 
-.tag {
+.footer__text {
+  margin: auto 2% auto auto;
+  font-weight: normal;
+  display: flex;
+  justify-content: flex-end;
+  color: #ffffff;
 }
+/*End*/
 
+/* Components*/
 .logo {
-  float: left;
-  width: 70px;
-  height: 70px;
+  /*this is temporary until we have a design for the logo*/
+  width: 100px;
+  height: 100px;
+  margin: 10px 0 60px 10px;
   background-color: #0098fe;
-  margin-top: 35px;
-  margin-left: 40px;
 }
 
 /*Component modifiers*/
-.contentBox--login {
-  width: 500px;
-  height: 300px;
-  margin: 100px 0 0 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #0098fe;
-  border: solid #0098fe 4px;
-}
-
-.inputField--login {
-  width: 70%;
-  height: 15%;
-  margin: 0 0 20px 0;
-  font-size: 23px;
-  color: #0098fe;
-  border-radius: 20px;
-  border: solid #0098fe 3px;
-}
-
-.inputField--login::placeholder {
-  opacity: 1;
-  text-align: center;
-}
-
-.button1--submit {
-  width: 150px;
-  height: 40px;
-  font-size: 20px;
-  border-radius: 15px;
-}
