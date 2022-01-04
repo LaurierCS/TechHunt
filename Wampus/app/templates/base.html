@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,19 +7,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Home{% endblock title %}</title>
+    <link rel="stylesheet" href="main.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 </head>
 <body>
     <div class="siteContainer">
+        <!-- Side Panel -->
         <div class="sidePanel">
-            
+            <div class="logo">
+                
+            </div>
+            <!-- Links to other Pages ... Need to update with django references to links-->
+            <h1 class="sidePanel__links"><a href="">Home</a></h1>
+            <h1 class="sidePanel__links"><a href="">Profile</a></h1>
+            <h1 class="sidePanel__links"><a href="">Create a Project</a></h1>
         </div>
+        <!-- End of Side Panel -->
+
+        <!-- Main Page Content -->
         <div class="main">
-            {% block content %}
-            {% endblock content %}
+            <div class="topBar">
+                <input type="text" class="inputField inputField--search" placeholder="Search Projects">
+                <div class="profile">
+                    <!-- Need to update to django reference to current user -->
+                    <h2 class="profile__name">Hey, @Username</h2>
+                </div>
+            </div>
+            <div class="pageContent">
+                {% block profile %}
+                {% endblock profile %}
+            </div>
         </div>
+        <!-- End of Main Page Content -->
+
+        <!-- Footer -->
         <div class="footer">
-            
+            <!-- Links to other Pages ... Need to update with django references to links-->
+            <h1 class="footer__links"><a href="">About</a></h1>
+            <!-- <h1 class="footer__links"><a href="">The Team</a></h1> -->
+            <h1 class="footer__text">Made with Love LCS Pod2</h1>
         </div>
+        <!-- End of Footer -->
     </div>
+    
+</div>
 </body>
 </html>
