@@ -31,6 +31,7 @@ class Project(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True)
     tags = models.ManyToManyField('Tag', blank=True)
+    category = models.ForeignKey("Category", blank = True, null = True, on_delete=models.SET_NULL)
 
     # Project Attributes
     def __str__(self):
@@ -74,3 +75,15 @@ class Comment(models.Model):
     # Comment Attributes
     def __str__(self):
         return self.text
+
+    # Category Model
+class Category(models.Model):
+
+    # Category Fields
+
+    project = models.Charfield(max_length=50, null=True)
+
+    # Category Attributes
+    def __str__(self):
+        return self.name
+        
