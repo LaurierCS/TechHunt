@@ -1,204 +1,183 @@
-body, html {
+/*Site-wide styling*/
+* {
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+body,
+html {
   width: 100%;
-  height: 130%;
+  height: 100%;
   margin: 0;
+  font-size: 14px;
 }
 
-.container {
+a {
+  text-decoration: none;
+}
+
+.siteContainer {
   width: 100%;
-  height: 100%;
+  height: fit-content;
+  min-height: 90%;
+  display: flex;
+  background-color: #ffffff;
+}
+/*End*/
+
+/*Base elements*/
+.sidePanel {
+  width: 17%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #eeeeee;
+  border-collapse: collapse;
 }
 
-.left {
-  width: 20%;
-  height: 100%;
-  float: left;
-  background-color: #F4F4F4;
-  border-collapse: collapse;
+.sidePanel__links {
+  margin: 10% 0 0 10%;
+  font-weight: normal;
+}
+
+.sidePanel__links a {
+  color: #000000;
+}
+
+.sidePanel__links:hover {
+  opacity: 70%;
 }
 
 .main {
-  width: 80%;
-  height: 100%;
-  float: left;
-  background-color: #FFFFFF;
-  border-collapse: collapse;
+  width: 83%;
+  height: 1000px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+}
+
+.topBar {
+  width: 100%;
+  height: 10vh;
+  padding: 1%;
+  display: flex;
+  flex-direction: row;
+}
+
+.profile {
+  height: 50px;
+  min-width: 100px;
+  margin: 0 5% auto auto;
+  padding: 0 1%;
+  display: table;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #6000fe;
+}
+
+.profile__name {
+  margin: 0;
+  display: table-cell;
+  vertical-align: middle;
+  color: #ffffff;
+}
+
+.pageContent {
+  height: fit-content;
+  min-height: 100%;
 }
 
 .footer {
   width: 100%;
-  height: 15%;
+  height: 10%;
+  max-height: 10%;
+  display: flex;
   position: fixed;
-  bottom: 0;
   left: 0;
-  display:block;
-  background-color: #6000FE;
-  border-collapse: collapse;
+  bottom: 0;
+  color: #ffffff;
+  background-color: #6000fe;
 }
 
-.main input[type=text] {
-  float: left;
-  padding: 6px 20px 6px;
-  width: 50%;
-  background-color: #EEEEEE;
-  border: #EEEEEE;
-  border-radius: 30px;
-  margin-top: 35px;
-  margin-left: 26px;
+.footer__links {
+  margin: auto 4% auto 0;
+  font-weight: normal;
+  position: relative;
+  left: 3%;
+}
+
+.footer__links a {
   font-size: 14px;
+  color: #ffffff;
 }
 
+.footer__links:hover {
+  opacity: 70%;
+}
+
+.footer__text {
+  margin: auto 2% auto auto;
+  font-weight: normal;
+
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  color: #ffffff;
+}
+/*End*/
+
+/* Components*/
 .logo {
-  float: left;
-  width: 70px;
-  height: 70px;
-  background-color: #0098FE;
-  margin-top: 35px;
-  margin-left: 40px;
+  /*this is temporary until we have a design for the logo*/
+  width: 100px;
+  height: 100px;
+  margin: 10% 0 15% 10%;
+  background-color: #0098fe;
 }
 
-.profileTag {
-  float: right;
+.inputField {
+  width: 200px;
+  height: 35px;
+  text-align: center;
+  border-radius: 20px;
+  border: solid #eeeeee 3px;
+}
+
+.btn {
   width: 100px;
   height: 35px;
-  background-color: #6000FE;
-  margin-top: 33px;
-  margin-right: 190px;
-  border-radius: 5px;
-}
-
-.profileImg {
-  float: left;
-  width: 35px;
-  height: 35px;
-  background-color: #c0bdbd;
-}
-
-.rightClassContainer {
-  width: 90%;
-  height: 80%;
-  margin-top: 99px;
-  margin-left: 26px;
-}
-
-.projects {
-  width: 65%;
-  height: 30%;
-  float: left;
-  border-collapse: collapse;
-}
-
-.favourites {
-  width: 34%;
-  height: 100%;
-  float: right;
-  border-collapse: collapse;
-}
-
-.community {
-  width: 65%;
-  height: 70%;
-  float: left;
-  border-collapse: collapse;
-}
-
-.projectsContainer {
-  width: 100%;
-  height: 78%;
-  float: left;
-  border:1px solid #EEEEEE;
-  border-collapse: collapse;
-  border-radius: 5px;
-  overflow-y: auto;
-}
-
-.favouritesContainer {
-  width: 100%;
-  height: 95%;
-  float: left;
-  border:1px solid #EEEEEE;
-  border-collapse: collapse;
-  border-radius: 5px;
-  overflow-x: auto;
-}
-
-.communityContainer {
-  width: 100%;
-  height: 93%;
-  float: left;
-  border-collapse: collapse;
-}
-
-.tagsContainer {
-  width: 100%;
-  height: 8%;
-  border:1px solid #EEEEEE;
-  border-radius: 5px;
-  overflow-x: auto;
-}
-
-.communityProjects {
-  width: 100%;
-  height: 90%;
-  margin-top: 11px;
-  border:1px solid #EEEEEE;
-  border-radius: 5px;
-  overflow-x: auto;
-}
-
-.myproject-card {
-  float: left;
-  width: 300px;
-  height: 200px;
-  background-color: #EEEEEE;
-  margin-top: 25px;
-  margin-left: 25px;
-  margin-bottom: 25px;
-  border-radius: 5px;
-}
-
-.project-card {
-  float: left;
-  width: 300px;
-  height: 200px;
-  background-color: #EEEEEE;
-  margin-top: 25px;
-  margin-left: 25px;
-  margin-bottom: 25px;
-  border-radius: 5px;
-}
-
-.tags {
-  float: left;
-  width: 75px;
-  height: 29px;
-  border: 2px solid #0098FE;
-  margin-top: 11px;
-  margin-left: 10px;
-  border-radius: 5px;
-}
-
-.rateproject-button {
-  float: left;
-  width: 250px;
-  height: 24px;
+  margin: 1% 5% auto auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
   text-align: center;
-  color: #FFFFFF;
-  border: 2px solid #0098FE;
-  background-color: #0098FE;
-  margin-top: 40px;
-  margin-left: 25px;
   border-radius: 21px;
+  background-color: #0098fe;
+  border: solid #0098fe;
+  color: #ffffff;
 }
 
-.joinrequest-button {
-  float: left;
-  width: 250px;
-  height: 24px;
-  text-align: center;
-  color: #0098FE;
-  border: 2px solid #0098FE;
-  margin-top: 5px;
-  margin-left: 25px;
-  border-radius: 21px;
+/*Component modifiers*/
+.inputField--search {
+  width: 50%;
+  min-width: 50%;
+  margin: 1% 0 0 7%;
+  font-size: 17px;
+  justify-content: flex-start;
+  background-color: #eeeeee;
+}
+
+.inputField--search::placeholder {
+  color: #000000;
+}
+
+.inputField--search:hover {
+  border-color: #cccccc;
+  background-color: #dddddd;
 }
