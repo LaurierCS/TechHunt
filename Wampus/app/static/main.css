@@ -53,7 +53,7 @@ a {
 
 .main {
   width: 83%;
-  height: 1000px;
+  height: fit-content;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -89,7 +89,7 @@ a {
 
 .pageContent {
   height: fit-content;
-  min-height: 100%;
+  min-height: 80vh;
 }
 
 .footer {

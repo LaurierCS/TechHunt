@@ -2,8 +2,19 @@
     <div class="logo">
         
     </div>
-    <!-- Links to other Pages ... Need to update with django references to links-->
-    <h1 class="sidePanel__links"><a href="">Home</a></h1>
-    <h1 class="sidePanel__links"><a href="">Profile</a></h1> <!-- If user not logged in, direct to login page -->
-    <h1 class="sidePanel__links"><a href="">Create a Project</a></h1> <!-- If user not logged in, direct to login page -->
+    <h1 class="sidePanel__links"><a href="/homepage">Home</a></h1>
+
+    <h1 class="sidePanel__links"><a
+        {% if request.user.is_authenticated %}
+            href="/profile"
+        {% else %}
+            href="/login"
+        {% endif %} >Profile</a></h1>
+    <!-- Add the refrence to the create project page instead of # -->
+    <h1 class="sidePanel__links"><a
+        {% if request.user.is_authenticated %}
+            href="#"
+        {% else %}
+            href="/login"
+        {% endif %} >Create a Project</a></h1>
 </div>

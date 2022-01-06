@@ -21,7 +21,7 @@
         <!-- Main Page Content -->
         <div class="main">
             <div class="topBar">
-                <input type="text" class="inputField inputField--search" placeholder="Search Projects">
+                {% include "components\searchBarComponent.html" %}
                 {% include "components\profileComponent.html" %}
             </div>
             <div class="pageContent">
@@ -34,7 +34,7 @@
         <!-- Footer -->
         <div class="footer">
             <!-- Links to other Pages ... Need to update with django references to links-->
-            <h1 class="footer__links"><a href="">About</a></h1>
+            <h1 class="footer__links"><a href="/about-us">About</a></h1>
             <!-- <h1 class="footer__links"><a href="">The Team</a></h1> -->
             <h1 class="footer__text">Made with Love LCS Pod2</h1>
         </div>
