@@ -71,6 +71,11 @@ def homepage_view(request):
 
 
 def profilepage_view(request):
+
+    # If the user is not logged in, redirect to login page
+    if not request.user.is_authenticated:
+        return redirect('/login/')
+
     object1 =  """Some object queried from the Database, 
                 maybe a project or set of project objects"""
     
@@ -118,6 +123,6 @@ def aboutus_view(request):
         'object1':object1
     }
 
-    template_name = '<name>.html'
+    template_name = 'about.html'
 
     return render(request, template_name, context)

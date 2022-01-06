@@ -1,131 +1,17 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="uft-8">
-        <title>WAMPUS</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <!--Link CSS-->
-        <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
-        
-    </head> 
-    <div class="container">
-        <div class="left">
-          <div class="logo"></div>
-          <h1 style="margin-top: 140px; margin-left: 40px;color: #0098FE;">Home</h1>
-          <h1 style="margin-left: 40px;">Profile</h1>
-        </div>
-        <div class="main">
-          <input type="text" placeholder="Search Bar">
-          <div class="profileTag">
-            <div class="profileImg"></div>
-          </div>
-          <div class="rightClassContainer">
-            <div class="projects">
-              <h1 style="margin-left: 10px;">Your Projects</h1>
-              <div class="projectsContainer">
-                <div class="myproject-card">
-                  <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
-                  <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
-                </div>
-                <div class="myproject-card">
-                  <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
-                  <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
-                </div>
-                <div class="myproject-card">
-                  <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
-                  <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
-                </div>
-              </div>
-            </div>
-            <div class="favourites">
-              <h1 style="margin-left: 10px;">Favourites</h1>
-              <div class="favouritesContainer">
-                <div class="project-card">
-                  <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
-                  <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
-                  <button type="button" class="rateproject-button">Rate this project</button>
-                  <button type="button" class="joinrequest-button">Request to join team</button>
-                </div>
-                <div class="project-card">
-                  <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
-                  <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
-                  <button type="button" class="rateproject-button">Rate this project</button>
-                  <button type="button" class="joinrequest-button">Request to join team</button>
-                </div>
-              </div>
-            </div>
-            <div class="community">
-              <h1 style="margin-left: 10px;">Community</h1>
-              <div class="communityContainer">
-                <div class="tagsContainer">
-                  <div class="tags"></div>
-                  <div class="tags"></div>
-                  <div class="tags"></div>
-                  <div class="tags"></div>
-                  <div class="tags"></div>
-                  <div class="tags"></div>
-                  <div class="tags"></div>
-                </div>
-                <div class="communityProjects">
-                  <div class="project-card">
-                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
-                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
-                    <button type="button" class="rateproject-button">Rate this project</button>
-                    <button type="button" class="joinrequest-button">Request to join team</button>
-                  </div>
-                  <div class="project-card">
-                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
-                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
-                    <button type="button" class="rateproject-button">Rate this project</button>
-                    <button type="button" class="joinrequest-button">Request to join team</button>
-                  </div>
-                  <div class="project-card">
-                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
-                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
-                    <button type="button" class="rateproject-button">Rate this project</button>
-                    <button type="button" class="joinrequest-button">Request to join team</button>
-                  </div>
-                  <div class="project-card">
-                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
-                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
-                    <button type="button" class="rateproject-button">Rate this project</button>
-                    <button type="button" class="joinrequest-button">Request to join team</button>
-                  </div>
-                  <div class="project-card">
-                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
-                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
-                    <button type="button" class="rateproject-button">Rate this project</button>
-                    <button type="button" class="joinrequest-button">Request to join team</button>
-                  </div>
-                  <div class="project-card">
-                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
-                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
-                    <button type="button" class="rateproject-button">Rate this project</button>
-                    <button type="button" class="joinrequest-button">Request to join team</button>
-                  </div>
-                  <div class="project-card">
-                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
-                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
-                    <button type="button" class="rateproject-button">Rate this project</button>
-                    <button type="button" class="joinrequest-button">Request to join team</button>
-                  </div>
-                  <div class="project-card">
-                    <h3 style="margin-top: 15px;margin-left: 15px;">Card Title</h3>
-                    <h5 style="margin-top: 5px;margin-left: 15px;">Description</h5>
-                    <button type="button" class="rateproject-button">Rate this project</button>
-                    <button type="button" class="joinrequest-button">Request to join team</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer">
-          <b style="color: #EEEEEE;margin-left: 90px;display:inline-block;margin-top: 50px;">About</b>
-          <b style="color: #EEEEEE;margin-left: 40px;display:inline-block;">The Team</b>
-          <b style="color: #EEEEEE;margin-left: 890px;display:inline-block;">Made with Love LCS Pod 2</b>
-        </div>
-    </div>
-</html>
+{% extends "base.html" %}
+
+<!-- Title -->
+{% block title %}Home{% endblock title %}
+
+<!-- Main Page Content -->
+{% block content %}
+
+<div class="yourprojects">
+  <h1>Your Projects</h1>
+  <div class="contentContainer contentContainer--yourProjects--homepage">
+    {% include "components\projectCardComponent.html" %}
+  </div>
+</div>
+{% include "components\tagComponent.html" %}
+  
+{% endblock content %}

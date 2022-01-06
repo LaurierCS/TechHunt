@@ -1,14 +1,9 @@
-<div class="profile">
-    <h2 class="profile__name">Hey, @Username</h2>
-</div>
-
-{% comment %}
-    Get proper code to load username if logged in, else show login button
-{% if z==1 %}
+{% if request.user.is_authenticated %}
     <div class="profile">
         <h2 class="profile__name">Hey, @{{ user.username }}</h2>
     </div>
 {% else %}
-    <a class="btn" href="#">Login</a>
+    {% with name="Login" classes="btn btn--login" ref="/login" %}
+        {% include "components\buttonComponent.html"  %}
+    {% endwith %}
 {% endif %}
-{% endcomment %}
