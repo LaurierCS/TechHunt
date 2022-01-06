@@ -71,6 +71,11 @@ def homepage_view(request):
 
 
 def profilepage_view(request):
+
+    # If the user is not logged in, redirect to login page
+    if not request.user.is_authenticated:
+        return redirect('/login/')
+
     object1 =  """Some object queried from the Database, 
                 maybe a project or set of project objects"""
     

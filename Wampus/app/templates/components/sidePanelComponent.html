@@ -1,20 +1,8 @@
 <div class="sidePanel">
     <div class="logo">
-        
+        logo here
     </div>
     <h1 class="sidePanel__links"><a href="/homepage">Home</a></h1>
-
-    <h1 class="sidePanel__links"><a
-        {% if request.user.is_authenticated %}
-            href="/profile"
-        {% else %}
-            href="/login"
-        {% endif %} >Profile</a></h1>
-    <!-- Add the refrence to the create project page instead of # -->
-    <h1 class="sidePanel__links"><a
-        {% if request.user.is_authenticated %}
-            href="#"
-        {% else %}
-            href="/login"
-        {% endif %} >Create a Project</a></h1>
+    <h1 class="sidePanel__links"><a href="/profile">Profile</a></h1>
+    <h1 class="sidePanel__links"><a href="#">Create a Project</a></h1>
 </div>
