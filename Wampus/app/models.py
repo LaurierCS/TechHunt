@@ -80,7 +80,8 @@ class Comment(models.Model):
 class Category(models.Model):
 
     # Category Fields
-
+    name = models.CharField(max_length=30, null=True)
+    description = models.CharField(max_length=250, null=True,blank=True)
     project = models.Charfield(max_length=50, null=True)
 
     # Category Attributes
