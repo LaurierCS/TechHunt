@@ -264,3 +264,117 @@ a {
   background-color: #ffffff;
   color: #0098fe;
 }
+
+.logo--login {
+  /*this is temporary until we have a design for the logo*/
+  width: 100px;
+  height: 100px;
+  margin: 2% 2%;;
+  background-color: #0098fe;
+}
+
+.btn--loginPage {
+  margin: 3% auto;
+}
+
+.btn--register {
+  margin: 4% auto;
+  background-color: #6000fe;
+  border-color: #6000fe;
+}
+
+.contentContainer--login {
+  margin: 5% 35% auto auto;
+  width: 470px;
+  height: 300px;
+  border: 3px solid #0098fe;
+  border-radius: 7px;
+}
+
+.inputField--username {
+  width: 75%;
+  min-width: 50%;
+  margin: 1% 0 0 12%;
+  padding: 0 0 0 1%;
+  font-size: 17px;
+  text-align: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  border: 3px solid #0098fe;
+}
+
+.inputField--password {
+  width: 75%;
+  min-width: 50%;
+  margin: 3% 0 0 12%;
+  padding: 0 0 0 1%;
+  font-size: 17px;
+  text-align: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  border: 3px solid #0098fe;
+}
+
+.inputField--username::placeholder {
+  color: #0098fe;
+}
+
+.inputField--password::placeholder {
+  color: #0098fe;
+}
+
+.contentContainer--register {
+  margin: 5% 35% auto auto;
+  width: 470px;
+  height: 350px;
+  border: 3px solid #6000fe;
+  border-radius: 7px;
+}
+
+.inputField--email {
+  width: 75%;
+  min-width: 50%;
+  margin: 1% 0 0 12%;
+  padding: 0 0 0 1%;
+  font-size: 17px;
+  text-align: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  border: 3px solid #6000fe;
+}
+
+.inputField--username--register {
+  width: 75%;
+  min-width: 50%;
+  margin: 3% 0 0 12%;
+  padding: 0 0 0 1%;
+  font-size: 17px;
+  text-align: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  border: 3px solid #6000fe;
+}
+
+.inputField--password--register {
+  width: 75%;
+  min-width: 50%;
+  margin: 3% 0 0 12%;
+  padding: 0 0 0 1%;
+  font-size: 17px;
+  text-align: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  border: 3px solid #6000fe;
+}
+
+.inputField--email::placeholder {
+  color: #6000fe;
+}
+
+.inputField--username--register::placeholder {
+  color: #6000fe;
+}
+
+.inputField--password--register::placeholder {
+  color: #6000fe;
+}

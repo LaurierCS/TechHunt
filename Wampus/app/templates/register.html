@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sign Up{% endblock title %}</title>
+    <!--Link CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+</head>
+<div class="logo logo--login">
+    logo here
+</div>
+<div class="contentContainer contentContainer--register">
+    <h1 style="color: #6000fe;text-align: center;font-size:xx-large;">Sign Up</h1>
+    <input type="text" class="inputField inputField--email" placeholder="Email">
+    <input type="text" class="inputField inputField--username--register" placeholder="Username">
+    <input type="text" class="inputField inputField--password--register" placeholder="Password">
+    <input type="text" class="inputField inputField--password--register" placeholder="Confirm Password">
+    {% with name="Sign Up" classes="btn btn--register" ref="/login" %}
+        {% include "components/buttonComponent.html"  %}
+    {% endwith %}
+</div>
+    
+</div>
+</html>
