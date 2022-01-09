@@ -11,7 +11,19 @@
   <div class="contentContainer contentContainer--yourProjects--homepage">
     {% include "components/projectCardComponent.html" %}
   </div>
+  <h2>Community</h2>
+  <div class="contentContainer contentContainer--tags--homepage">
+    {% include "components/tagComponent.html" %}
+  </div>
+  <div class="contentContainer contentContainer--communityprojects--homepage">
+    {% include "components/projectCardComponent.html" %}
+  </div>
 </div>
-{% include "components/tagComponent.html" %}
+<div class="favourites">
+  <h1>Favourites</h1>
+  <div class="contentContainer contentContainer--favourite--homepage">
+    {% include "components/projectCardComponent.html" %}
+  </div>
+</div>
   
 {% endblock content %}
