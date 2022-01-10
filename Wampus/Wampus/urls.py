@@ -27,7 +27,8 @@ urlpatterns = [
     path('register/', views.register_view),
     path('project/', views.project_view),
     path('profile/', views.profilepage_view),
-    path('about-us/', views.aboutus_view)
+    path('about-us/', views.aboutus_view),
+    path('create-project/', views.createproject_view)
 ]
 
 """
