@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from .forms import RegisterForm
+from django.db.models import Q
+from .models import Project, Category, Tag, Profile, Favorite, Comment
 
 def login_view(request):
 
@@ -51,18 +53,60 @@ def register_view(request):
     
     return render(request, template_name, context)
 
-
 def homepage_view(request):
-    object1 =  """Some object queried from the Database, 
-                maybe a project or set of project objects"""
     
+    # If the user is not logged in, redirect to login page
+    if not request.user.is_authenticated:
+        return redirect('/login/')
+
+    # Get the current user
+    user = request.user
+
+    # Get the user's profile
+    profile = Profile.objects.get(user=user)
+
+    # Get the user's projects
+    projects = Project.objects.filter(profile=profile)
+
+    # Get the user's favorites
+    favorites = Favorite.objects.filter(profile=profile)
+
+    # Get all tags
+    tags = Tag.objects.all()
+
+    # Get most popular projects 
+    popular_projects = Project.objects.all().order_by('-rating')[:5] 
+
+    # Define a function to search all projects
+    def search_projects(request):
+            
+        # Get the search query
+        query = request.GET.get('query') # Change the tag in the HTML to fit the name of the query or it will throw error
+
+        # If the query is empty, return all projects
+        if query == '':
+            return Project.objects.all()
+
+        search_results = Project.objects.filter(
+            Q(name__icontains=query) |
+            Q(description__icontains=query) |
+            Q(profile__user__username__icontains=query) |
+            Q(tags__name__icontains=query) |
+            Q(categories__name__icontains=query)
+        )
+
+        # Otherwise, return the queried projects by name, description, tags, categories or users
+        return search_results
+
+    # Search projects using search bar
+    search_results = search_projects(request)
+
     context = {
-        #You place objects in here that you want to bring 
-        # to the front end. You do it just by adding them
-        # to this dictionary commonly called context -
-        # simply store key and value pairs
-        # For example:
-        'object1':object1
+        'search_results': search_results,
+        'projects': projects,
+        'profile': profile,
+        'favorites': favorites,
+        'tags': tags
     }
 
     template_name = 'homepage.html'
