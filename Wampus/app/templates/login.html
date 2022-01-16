@@ -22,11 +22,11 @@
         <input type="text" class="inputField inputField--username" placeholder="Username" name="username">
         <input type="password" class="inputField inputField--password" placeholder="Password" name="password">
 
-        {% with name="Login" classes="btn btn--loginPage" type="submit" click="" %}
+        {% with name="Login" classes="btn btn--loginPage" type="submit" %}
             {% include "components/buttonComponent.html"  %}
         {% endwith %}
     </form>
-    {% with name="Sign Up" classes="btn btn--loginPage" type="submit" click="location.href = '/register'" %}
+    {% with name="Sign Up" classes="btn btn--loginPage" type="" click="window.location='{% url "register/" %}'"%}
         {% include "components/buttonComponent.html"  %}
     {% endwith %}
 </div>
