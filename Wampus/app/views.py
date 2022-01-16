@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login
 from .forms import RegisterForm
 from django.db.models import Q
 from .models import Project, Category, Tag, Profile, Favorite, Comment
+from .query import search_projects
 
 
 def login_view(request):
@@ -37,76 +38,44 @@ def register_view(request):
 
     template_name = 'register.html'
 
-    # Create form object
-    form = RegisterForm(request.POST)
+    form = RegisterForm(request.POST) # Create form object
 
-    # If the form is valid, save the user
-    if form.is_valid():
-        user = form.save()
+    if form.is_valid():    
+        user = form.save() # If the form is valid, save the user
+        login(request, user) # Log the user in
+        return redirect('/homepage/') # Redirect to homepage 
 
-        # Log the user in
-        login(request, user)
-
-        # Redirect to homepage
-        return redirect('/homepage/')
-
-    context = {'form': form}
+    context = {'form': form }
 
     return render(request, template_name, context)
 
 
 def homepage_view(request):
-    # If the user is not logged in, redirect to login page
-    if not request.user.is_authenticated:
+
+    if not request.user.is_authenticated: # If the user is not logged in, redirect to login page
         return redirect('/login/')
 
-    # Get the current user
-    user = request.user
+    user = request.user # Get the user object
+     
     profile = Profile.objects.get(user=user)  # Get the user's profile
-    projects = Project.objects.filter(
-        profile=profile)  # Get the user's projects
-    favorites = Favorite.objects.filter(
-        profile=profile)  # Get the user's favorites
-    tags = Tag.objects.all()  # Get all tags
-
-    # Get most popular projects
-    popular_projects = Project.objects.all().order_by('-rating')[:5]
+    projects = Project.objects.filter(profile=profile)  # Get the user's projects
+    favorites = Favorite.objects.filter(profile=profile)  # Get the user's favorites
+    tags = Tag.objects.all() # Get all tags
+    popular_projects = Project.objects.all().order_by('-rating')[:5] # Get most popular projects
+    search_results = search_projects(request) # Get search results
 
     context = {
         'projects': projects,
         'profile': profile,
         'favorites': favorites,
-        'tags': tags
+        'tags': tags,
+        'popular_projects': popular_projects,
+        'search_results': search_results
     }
 
     template_name = 'homepage.html'
 
     return render(request, template_name, context)
-
-# Define a function to search all projects
-
-
-def search_projects(request):
-
-    # Get the search query
-    # Change the tag in the HTML to fit the name of the query or it will throw error
-    query = request.GET.get('query')
-
-    # If the query is empty, return all projects
-    if query == '':
-        return Project.objects.all()
-
-    search_results = Project.objects.filter(
-        Q(name__icontains=query) |
-        Q(description__icontains=query) |
-        Q(profile__user__username__icontains=query) |
-        Q(tags__name__icontains=query) |
-        Q(categories__name__icontains=query)
-    )
-
-    # Otherwise, return the queried projects by name, description, tags, categories or users
-    return search_results
-
 
 def profilepage_view(request):
 
