@@ -1,9 +1,3 @@
-{% if request.user.is_authenticated %}
-    <div class="profile">
-        <h2 class="profile__name">Hey, @{{ user.username }}</h2>
-    </div>
-{% else %}
-    {% with name="Login" classes="btn btn--login" ref="/login" %}
-        {% include "components/buttonComponent.html"  %}
-    {% endwith %}
-{% endif %}
+<div class="profile">
+    <h2 class="profile__name">Hey, @{{ user.username }}</h2>
+</div>

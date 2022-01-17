@@ -16,16 +16,18 @@
     logo here
 </div>
 <div class="contentContainer contentContainer--login">
-    <h1 style="color: #0098fe;text-align: center;font-size:xx-large;">Login</h1>
-    <input type="text" class="inputField inputField--username" placeholder="Username">
-    <input type="password" class="inputField inputField--password" placeholder="Password">
-    {% with name="Login" classes="btn btn--loginPage" ref="/login" %}
+    <form method="POST">
+        {% csrf_token %}
+        <h1 style="color: #0098fe;text-align: center;font-size:xx-large;">Login</h1>
+        <input type="text" class="inputField inputField--username" placeholder="Username" name="username">
+        <input type="password" class="inputField inputField--password" placeholder="Password" name="password">
+
+        {% with name="Login" classes="btn btn--loginPage" type="submit" %}
+            {% include "components/buttonComponent.html"  %}
+        {% endwith %}
+    </form>
+    {% with name="Sign Up" classes="btn btn--loginPage" type="" click="window.location='/register'" %}
         {% include "components/buttonComponent.html"  %}
     {% endwith %}
-    {% with name="Sign Up" classes="btn btn--loginPage" ref="/register" %}
-        {% include "components/buttonComponent.html"  %}
-    {% endwith %}
-</div>
-    
 </div>
 </html>

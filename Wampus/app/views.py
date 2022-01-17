@@ -13,7 +13,7 @@ def login_view(request):
 
     # If the user is already logged in, redirect to homepage
     if request.user.is_authenticated:
-        return redirect('/homepage/')
+        return redirect('/')
 
     # Get user input from the login form
     if request.method == 'POST':
@@ -26,7 +26,7 @@ def login_view(request):
         # If the user is authenticated, log them in
         if user is not None:
             login(request, user)
-            return redirect('/homepage/')
+            return redirect('/')
 
         else:  # If the user is not authenticated, show an error message
             messages.error(request, 'Invalid username or password')
@@ -43,7 +43,7 @@ def register_view(request):
     if form.is_valid():    
         user = form.save() # If the form is valid, save the user
         login(request, user) # Log the user in
-        return redirect('/homepage/') # Redirect to homepage 
+        return redirect('/') # Redirect to homepage 
 
     context = {'form': form }
 
@@ -62,7 +62,7 @@ def homepage_view(request):
     favorites = Favorite.objects.filter(profile=profile)  # Get the user's favorites
     tags = Tag.objects.all() # Get all tags
     popular_projects = Project.objects.all().order_by('-rating')[:5] # Get most popular projects
-    search_results = search_projects(request) # Get search results
+    #search_results = search_projects(request) # Get search results
 
     context = {
         'projects': projects,
@@ -70,7 +70,7 @@ def homepage_view(request):
         'favorites': favorites,
         'tags': tags,
         'popular_projects': popular_projects,
-        'search_results': search_results
+        #'search_results': search_results
     }
 
     template_name = 'homepage.html'
