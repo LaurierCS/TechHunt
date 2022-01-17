@@ -26,7 +26,7 @@
             {% include "components/buttonComponent.html"  %}
         {% endwith %}
     </form>
-    {% with name="Sign Up" classes="btn btn--loginPage" type="" click="window.location='{% url "register/" %}'"%}
+    {% with name="Sign Up" classes="btn btn--loginPage" type="" click="window.location='/register'" %}
         {% include "components/buttonComponent.html"  %}
     {% endwith %}
 </div>
