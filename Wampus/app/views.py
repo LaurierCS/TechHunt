@@ -62,7 +62,7 @@ def homepage_view(request):
     favorites = Favorite.objects.filter(profile=profile)  # Get the user's favorites
     tags = Tag.objects.all() # Get all tags
     popular_projects = Project.objects.all().order_by('-rating')[:5] # Get most popular projects
-    search_results = search_projects(request) # Get search results
+    #search_results = search_projects(request) # Get search results
 
     context = {
         'projects': projects,
@@ -70,7 +70,7 @@ def homepage_view(request):
         'favorites': favorites,
         'tags': tags,
         'popular_projects': popular_projects,
-        'search_results': search_results
+        #'search_results': search_results
     }
 
     template_name = 'homepage.html'
