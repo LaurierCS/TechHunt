@@ -178,10 +178,12 @@ a {
 }
 
 .projectCard {
-  width: 360px;
+  min-width: 360px;
+  min-height: 225px;
+  width:360px;
   height: 225px;
-  margin: 1%;
   display: flex;
+  margin: 2%;
   flex-direction: column;
   background-color: #eeeeee;
   border-radius: 10px;
@@ -210,6 +212,7 @@ a {
   height: 35px;
   min-width: 40px;
   padding: 1%;
+  margin: 0 1% 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -251,8 +254,11 @@ a {
 
 .contentContainer--yourProjects--homepage {
   width: 95%;
-  height: 250px;
-  margin: 2% 0 0 0;
+  min-height: 250px;
+  height: fit-content;
+  margin: 1% 1% 1% 0;
+  display: flex;
+  flex-direction: row;
   overflow-x: auto;
 }
 
@@ -390,30 +396,64 @@ a {
 
 .contentContainer--tags--homepage {
   width: 95%;
-  height: 50px;
+  min-height: 61px;
+  max-height: 61px;
   margin: 2% 0 0 0;
-  padding: 4px;
+  padding: 1%;
+  display:flex;
+  flex-direction: row;
 }
 
 .contentContainer--communityprojects--homepage {
   width: 95%;
-  height: 500px;
+  max-height: 500px;
+  height: fit-content;
+  min-height: 250px;
   margin: 2% 0 0 0;
   overflow-x: auto;
 }
 
 .contentContainer--favourite--homepage {
-  width: 95%;
-  height: auto;
+  min-width: 85%;
+  width: fit-content;
+  max-width: 87%;
+  min-height: 250px;
+  height: fit-content;
   max-height: 900px;
+  margin: 1%;
   padding: 3px;
-  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 .favourites {
   width: 30%;
   float: right;
-  margin: 0 2% 0 0;
+}
+
+.yourprojects--noProjects{
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.noFavorites{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  opacity: 70%;
+  font-size: 12px;
+}
+
+.noTags{
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  text-align: center;
 }
 
 .createproject {

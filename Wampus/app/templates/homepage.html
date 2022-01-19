@@ -6,23 +6,76 @@
 <!-- Main Page Content -->
 {% block content %}
 
+<!-- User Projects -->
 <div class="yourprojects">
-  <h1>Your Projects</h1>
-  <div class="contentContainer contentContainer--yourProjects--homepage">
-    {% include "components/projectCardComponent.html" %}
-  </div>
+    <h1>Your Projects</h1>
+    <div class="contentContainer contentContainer--yourProjects--homepage">
+      {% if projects %}
+        {% for project in projects %}
+          {% with name=project.name desc=project.description %}
+            {% include "components/projectCardComponent.html" %}
+          {% endwith %}
+        {% endfor %}
+      {% else %}
+        <div class="yourprojects--noProjects">
+          <h1>No Projects?</h1>
+          {% with name="Create a project" classes="btn" type="" click="" %}
+            {% include "components/buttonComponent.html"  %}
+          {% endwith %}
+        </div>
+      {% endif %}
+    </div>
+  
+  <!-- Tags -->
   <h2>Community</h2>
   <div class="contentContainer contentContainer--tags--homepage">
-    {% include "components/tagComponent.html" %}
+    {% if tags %}
+      {% for tag in tags %}
+        {% with name=tag.name %}
+          {% include "components/tagComponent.html" %}
+        {% endwith %}
+      {% endfor %}
+    {% else %}
+      <div class="noTags">
+        <h3>No Tags available</h3>
+      </div>
+    {% endif %}
   </div>
+
+  <!-- Community Projects -->
   <div class="contentContainer contentContainer--communityprojects--homepage">
-    {% include "components/projectCardComponent.html" %}
+    {% if popular_projects %}
+        {% for project in popular_projects %}
+          {% with name=project.name desc=project.description %}
+            {% include "components/projectCardComponent.html" %}
+          {% endwith %}
+        {% endfor %}
+      {% else %}
+        <div class="yourprojects--noProjects">
+          <h1>No Community Projects</h1>
+          {% with name="Create a project" classes="btn" type="" click="" %}
+            {% include "components/buttonComponent.html"  %}
+          {% endwith %}
+        </div>
+      {% endif %}
   </div>
 </div>
+
+<!-- Favorites -->
 <div class="favourites">
   <h1>Favourites</h1>
   <div class="contentContainer contentContainer--favourite--homepage">
-    {% include "components/projectCardComponent.html" %}
+    {% if favorites %}
+      {% for project in favorites %}
+        {% with name=project.name desc=project.description %}
+          {% include "components/projectCardComponent.html" %}
+        {% endwith %}
+      {% endfor %}
+    {% else %}
+      <div class="noFavorites">
+        <h1>No Favorites</h1>
+      </div>
+    {% endif %}
   </div>
 </div>
   
