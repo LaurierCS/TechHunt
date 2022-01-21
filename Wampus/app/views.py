@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .forms import RegisterForm
 from django.db.models import Q
 from .models import Project, Category, Tag, Profile, Favorite, Comment
@@ -33,6 +33,11 @@ def login_view(request):
 
     return render(request, template_name)
 
+def logout_view(request):
+
+    logout(request)
+    
+    return redirect('/login/')
 
 def register_view(request):
 
