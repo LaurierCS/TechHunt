@@ -225,6 +225,35 @@ a {
   color: #0098fe;
 }
 
+.profileInfoCard {
+  width: 360px;
+  height: 225px;
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
+
+.profileInfo__text {
+  height: 145px;
+  max-height: 145px;
+  overflow-x: auto;
+}
+
+.profileInfo__title {
+  margin: 0;
+  padding: 3% 5% 0 5%;
+  float: left;
+}
+
+.profileInfo__username {
+  margin: 0;
+  padding: 4% 5% 1px 5%;
+  font-weight: normal;
+  font-size: 18px;
+}
+
 /*Component modifiers*/
 .inputField--search {
   width: 50%;
@@ -527,4 +556,26 @@ a {
 
 .btn--create {
   margin: 2% 5% auto auto;
+}
+
+.contentContainer--yourProjects--profile {
+  width: 95%;
+  height: 565px;
+  max-height: 900px;
+  margin: 2% 0 0 0;
+  overflow-x: auto;
+}
+
+.contentContainer--favourite--profile {
+  width: 95%;
+  height: auto;
+  max-height: 750px;
+  padding: 3px;
+  overflow-x: auto;
+}
+
+.btn--editProfile {
+  width: 80%;
+  height: 30px;
+  margin: 10% auto auto auto;
 }
