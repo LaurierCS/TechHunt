@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from .forms import RegisterForm
 from django.db.models import Q
-from .models import Project, Category, Tag, Profile, Favorite, Comment
+from .models import Project, Tag, Profile, Favorite, Comment
 from .query import search_projects
 
 

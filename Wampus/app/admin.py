@@ -1,6 +1,6 @@
 # Imports
 from django.contrib import admin
-from .models import Category, Profile, Project, Tag, Favorite, Comment
+from .models import Profile, Project, Tag, Favorite, Comment
 
 # Profile Model Admin 
 class ProfileAdmin(admin.ModelAdmin):
@@ -24,6 +24,3 @@ admin.site.register(Tag)
 
 # Register Comment Model
 admin.site.register(Comment)
-
-# Register Category Model
-admin.site.register(Category)

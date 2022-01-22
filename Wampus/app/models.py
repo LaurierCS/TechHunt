@@ -31,17 +31,21 @@ class Project(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True)
     tags = models.ManyToManyField('Tag', blank=True)
-    categories = models.ManyToManyField('Category', blank=True)
 
     # Project Attributes
     def __str__(self):
         return self.name
 
+# Favorite Model
 class Favorite(models.Model):
 
     # Favorite Fields
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
     project = models.OneToOneField('Project', on_delete=models.CASCADE)
+
+    # Favorite Attributes
+    def __str__(self):
+        return self.profile.user.username + "-" + self.project.name
 
 # Tag Model
 class Tag(models.Model):
@@ -62,7 +66,6 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
-
 # Comment Model
 class Comment(models.Model):
 
@@ -75,16 +78,4 @@ class Comment(models.Model):
     # Comment Attributes
     def __str__(self):
         return self.text
-
-# Category Model
-class Category(models.Model):
-
-    # Category Fields
-    name = models.CharField(max_length=30, null=True)
-    description = models.CharField(max_length=250, null=True,blank=True)
-    projects = models.ManyToManyField('Project', blank=True)
-
-    # Category Attributes
-    def __str__(self):
-        return self.name
         
