@@ -12,9 +12,13 @@
         <h2>Title <input type="text" class="inputField inputField--title"></h2>
         <h2>Description <input type="text" class="inputField inputField--description"></h2>
         <h2>Team Members <input type="text" class="inputField inputField--members"></h2>
-        <h2 style="text-align: center;">Add Image</h2>
+        <div class="contentContainer contentContainer--imageButton">
+            <input type="file" id="uploadImg" hidden>
+            <label for="uploadImg">Add Image</label>
+        </div>
         <div class="contentContainer contentContainer--image">
-            <input type="file" name="uploadImg" id="uploadImg">
+            <img src="" alt="Image Preview" class="image-preview">
+            <span class="image-preview__default-text">Image Preview</span>
         </div>
         {% with name="Create" classes="btn btn--create" type="submit" %}
             {% include "components/buttonComponent.html"  %}
