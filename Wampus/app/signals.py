@@ -18,5 +18,10 @@ def update_profile(sender, instance, created, **kwargs):
     if created == False:
         instance.profile.save()
     
-
-    
+@receiver(post_save, sender=User)
+def deleteUser(sender, instance, **kwargs):
+    try:
+        user = instance.user
+        user.delete()
+    except:
+        pass
