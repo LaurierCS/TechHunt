@@ -34,7 +34,8 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #eeeeee;
+  background-color: #6000fe;
+  background-image: linear-gradient(orange, #6000fe, #0098fe);
   border-collapse: collapse;
 }
 
@@ -578,4 +579,20 @@ a {
   width: 80%;
   height: 30px;
   margin: 10% auto auto auto;
+}
+
+.contentContainer--imageButton {
+  width: 95%;
+  height: 50px;
+  align-items: center;
+  text-align: center;
+  border: none;
+  padding: 10px;
+}
+
+label {
+  background-color: #6000fe;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
 }
