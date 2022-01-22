@@ -10,7 +10,7 @@ def search_projects(request):
         Q(name__icontains=query) |
         Q(description__icontains=query) |
         Q(profile__user__username__icontains=query) |
-        Q(tags__name__icontains=query) |
+        Q(tags__name__icontains=query)
     )
 
     # Otherwise, return the queried projects by name, description, tags, categories or users
