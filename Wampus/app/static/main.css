@@ -45,7 +45,8 @@ a {
 }
 
 .sidePanel__links a {
-  color: #000000;
+  color: #ffffff;
+  font-family:serif;
 }
 
 .sidePanel__links:hover {
@@ -86,6 +87,8 @@ a {
   display: table-cell;
   vertical-align: middle;
   color: #ffffff;
+  font-family: sans-serif;
+  font-weight: lighter;
 }
 
 .pageContent {
@@ -139,7 +142,7 @@ a {
   width: 100px;
   height: 100px;
   margin: 10% 0 15% 10%;
-  background-color: #0098fe;
+  background-color: #0098fe59;
 }
 
 .inputField {
@@ -229,7 +232,7 @@ a {
 .profileInfoCard {
   width: 360px;
   height: 225px;
-  margin: 1%;
+  margin: 2%;
   display: flex;
   flex-direction: column;
   background-color: #eeeeee;
@@ -246,13 +249,15 @@ a {
   margin: 0;
   padding: 3% 5% 0 5%;
   float: left;
+  font-family: monospace;
 }
 
 .profileInfo__username {
   margin: 0;
-  padding: 4% 5% 1px 5%;
+  padding: 4% 5% 0 5%;
   font-weight: normal;
   font-size: 18px;
+  font-family: monospace;
 }
 
 /*Component modifiers*/
@@ -268,7 +273,8 @@ a {
 }
 
 .inputField--search::placeholder {
-  color: #000000;
+  color: #6e6e6ebb;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .inputField--search:hover {
@@ -277,13 +283,13 @@ a {
 }
 
 .yourprojects {
-  width: 65%;
+  width: 63%;
   margin: 0 0 1% 3%;
   float: left;
 }
 
 .contentContainer--yourProjects--homepage {
-  width: 95%;
+  width: 98%;
   min-height: 250px;
   height: fit-content;
   margin: 1% 1% 1% 0;
@@ -315,7 +321,7 @@ a {
   width: 100px;
   height: 100px;
   margin: 2% 2%;;
-  background-color: #0098fe;
+  background-color: #0098fe59;
 }
 
 .btn--loginPage {
@@ -332,8 +338,9 @@ a {
   margin: 5% 35% auto auto;
   width: 470px;
   height: 300px;
-  border: 3px solid #0098fe;
+  border: 3px solid #2C2C2C;
   border-radius: 7px;
+  background-color: #2C2C2C;
 }
 
 .inputField--username {
@@ -341,11 +348,12 @@ a {
   min-width: 50%;
   margin: 1% 0 0 12%;
   padding: 0 0 0 1%;
-  font-size: 17px;
+  font-size: 15px;
   text-align: center;
   justify-content: flex-start;
-  background-color: #ffffff;
+  background-color: #2C2C2C;
   border: 3px solid #0098fe;
+  color: #eeeeee;
 }
 
 .inputField--password {
@@ -353,11 +361,12 @@ a {
   min-width: 50%;
   margin: 3% 0 0 12%;
   padding: 0 0 0 1%;
-  font-size: 17px;
+  font-size: 15px;
   text-align: center;
   justify-content: flex-start;
-  background-color: #ffffff;
+  background-color: #2C2C2C;
   border: 3px solid #0098fe;
+  color: #eeeeee;
 }
 
 .inputField--username::placeholder {
@@ -372,8 +381,9 @@ a {
   margin: 5% 35% auto auto;
   width: 470px;
   height: 350px;
-  border: 3px solid #6000fe;
+  border: 3px solid #9E9E9E;
   border-radius: 7px;
+  background-color: #9E9E9E;
 }
 
 .inputField--email {
@@ -381,10 +391,10 @@ a {
   min-width: 50%;
   margin: 1% 0 0 12%;
   padding: 0 0 0 1%;
-  font-size: 17px;
+  font-size: 15px;
   text-align: center;
   justify-content: flex-start;
-  background-color: #ffffff;
+  background-color: #9E9E9E;
   border: 3px solid #6000fe;
 }
 
@@ -393,10 +403,10 @@ a {
   min-width: 50%;
   margin: 3% 0 0 12%;
   padding: 0 0 0 1%;
-  font-size: 17px;
+  font-size: 15px;
   text-align: center;
   justify-content: flex-start;
-  background-color: #ffffff;
+  background-color: #9E9E9E;
   border: 3px solid #6000fe;
 }
 
@@ -405,10 +415,10 @@ a {
   min-width: 50%;
   margin: 3% 0 0 12%;
   padding: 0 0 0 1%;
-  font-size: 17px;
+  font-size: 15px;
   text-align: center;
   justify-content: flex-start;
-  background-color: #ffffff;
+  background-color: #9E9E9E;
   border: 3px solid #6000fe;
 }
 
@@ -458,8 +468,9 @@ a {
 }
 
 .favourites {
-  width: 30%;
+  width: 33%;
   float: right;
+  padding-right: 1px;
 }
 
 .yourprojects--noProjects{
@@ -545,14 +556,16 @@ a {
   width: 90%;
   min-width: 50%;
   height: 200px;
-  max-height: fit-content;
+  max-height: 200px;
   margin: 1% 0 0 4%;
   font-size: 17px;
   text-align: center;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   background-color: #ffffff;
   border: 2px solid #0098fe;
   border-radius: 20px;
+  display: flex;
 }
 
 .btn--create {
@@ -560,7 +573,7 @@ a {
 }
 
 .contentContainer--yourProjects--profile {
-  width: 95%;
+  width: 98%;
   height: 565px;
   max-height: 900px;
   margin: 2% 0 0 0;
@@ -568,9 +581,17 @@ a {
 }
 
 .contentContainer--favourite--profile {
-  width: 95%;
+  width: 98%;
   height: auto;
   max-height: 750px;
+  padding: 3px;
+  overflow-x: auto;
+}
+
+.contentContainer--profileInfo--profile {
+  width: 98%;
+  height: auto;
+  max-height: 250px;
   padding: 3px;
   overflow-x: auto;
 }
