@@ -274,7 +274,7 @@ a {
 
 .inputField--search::placeholder {
   color: #6e6e6ebb;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS';
 }
 
 .inputField--search:hover {
