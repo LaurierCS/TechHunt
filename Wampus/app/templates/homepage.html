@@ -8,7 +8,7 @@
 
 <!-- User Projects -->
 <div class="yourprojects">
-    <h1>Your Projects</h1>
+    <h1 style="font-family: Gill Sans;">Your Projects</h1>
     <div class="contentContainer contentContainer--yourProjects--homepage">
       {% if projects %}
         {% for project in projects %}
@@ -18,7 +18,7 @@
         {% endfor %}
       {% else %}
         <div class="yourprojects--noProjects">
-          <h1>No Projects?</h1>
+          <h1 style="font-family: fantasy;">No Projects?</h1>
           {% with name="Create a project" classes="btn" type="" click="" %}
             {% include "components/buttonComponent.html"  %}
           {% endwith %}
@@ -27,7 +27,7 @@
     </div>
   
   <!-- Tags -->
-  <h2>Community</h2>
+  <h2 style="font-family: Gill Sans;">Community</h2>
   <div class="contentContainer contentContainer--tags--homepage">
     {% if tags %}
       {% for tag in tags %}
@@ -37,7 +37,7 @@
       {% endfor %}
     {% else %}
       <div class="noTags">
-        <h3>No Tags available</h3>
+        <h3 style="font-family: fantasy;">No Tags available</h3>
       </div>
     {% endif %}
   </div>
@@ -52,7 +52,7 @@
         {% endfor %}
       {% else %}
         <div class="yourprojects--noProjects">
-          <h1>No Community Projects</h1>
+          <h1 style="font-family: fantasy;">No Community Projects</h1>
           {% with name="Create a project" classes="btn" type="" click="" %}
             {% include "components/buttonComponent.html"  %}
           {% endwith %}
@@ -63,7 +63,7 @@
 
 <!-- Favorites -->
 <div class="favourites">
-  <h1>Favourites</h1>
+  <h1 style="font-family: 'Gill Sans';">Favourites</h1>
   <div class="contentContainer contentContainer--favourite--homepage">
     {% if favorites %}
       {% for project in favorites %}
@@ -73,7 +73,7 @@
       {% endfor %}
     {% else %}
       <div class="noFavorites">
-        <h1>No Favorites</h1>
+        <h1 style="font-family: fantasy;">No Favorites</h1>
       </div>
     {% endif %}
   </div>
