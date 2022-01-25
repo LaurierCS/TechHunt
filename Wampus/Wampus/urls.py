@@ -22,15 +22,15 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns # For Develo
 
 urlpatterns = [
     path('admin/', admin.site.urls), # Do Not Remove
-    path('', views.homepage_view),
-    path('login/', views.login_view),
-    path('logout/', views.logout_view),
-    path('register/', views.register_view),
-    path('project/', views.project_view),
-    path('profile/', views.profilepage_view),
-    path('about-us/', views.aboutus_view),
-    path('create-project/', views.createproject_view),
-    path('landing/', views.landing_view)
+    path('', views.homepage_view, name='home'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('register/', views.register_view, name='register'),
+    path('project/', views.project_view, name='project'),
+    path('profile/', views.profilepage_view, name='profile'),
+    path('about-us/', views.aboutus_view, name='about'),
+    path('create-project/', views.createproject_view, name='create-project'),
+    path('landing/', views.landing_view, name='landing')
 ]
 
 """

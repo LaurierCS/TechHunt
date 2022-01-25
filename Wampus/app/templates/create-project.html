@@ -9,21 +9,25 @@
 <div class="createproject">
     <h1 style="font-family: 'Gill Sans';">Create Project</h1>
     <div class="contentContainer contentContainer--createproject">
-        <h2 style="font-family:monospace;">Title <input type="text" class="inputField inputField--title"></h2>
-        <h2 style="font-family:monospace;">Description <input type="text" class="inputField inputField--description"></h2>
-        <h2 style="font-family:monospace;">Team Members <input type="text" class="inputField inputField--members"></h2>
-        <div class="contentContainer contentContainer--imageButton">
-            <input type="file" id="uploadImg" hidden>
-            <label for="uploadImg">Add Image</label>
-        </div>
-        <div class="contentContainer contentContainer--image" id="imagePreview">
-            <img src="" alt="Image Preview" class="image-preview" hidden>
-            <span style="font-family:fantasy; font-size: large;"class="image-preview__default">Image Preview</span>
-        </div>
-        
-        {% with name="Create" classes="btn btn--create" type="submit" %}
-            {% include "components/buttonComponent.html"  %}
-        {% endwith %}
+        <form method="POST">
+            {% csrf_token %}
+
+            <h2 style="font-family:monospace;">Title <input type="text" class="inputField inputField--title" name="title"></h2>
+            <h2 style="font-family:monospace;">Description <input type="text" class="inputField inputField--description" name="description"></h2>
+            <h2 style="font-family:monospace;">Team Members <input type="text" class="inputField inputField--members"></h2>
+            <div class="contentContainer contentContainer--imageButton">
+                <input type="file" id="uploadImg" hidden>
+                <label for="uploadImg">Add Image</label>
+            </div>
+            <div class="contentContainer contentContainer--image" id="imagePreview">
+                <img src="" alt="Image Preview" class="image-preview" hidden>
+                <span style="font-family:fantasy; font-size: large;"class="image-preview__default">Image Preview</span>
+            </div>
+            
+            {% with name="Create" classes="btn btn--create" type="submit" click=""%}
+                {% include "components/buttonComponent.html"  %}
+            {% endwith %}
+        </form>
     </div>
 </div>
 

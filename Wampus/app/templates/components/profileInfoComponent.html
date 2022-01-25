@@ -2,12 +2,18 @@
 
 <div class="profileInfoCard">
     <div class="profileInfo__text">
-        <h2 class="profileInfo__title">Name: <h2 class="profileInfo__username">Name</h2></h2>
-        <h2 class="profileInfo__title">Username: <h2 class="profileInfo__username">Username</h2></h2>
-        <h2 class="profileInfo__title">Contact: <h2 class="profileInfo__username">Info</h2></h2>
+        <h2 class="profileInfo__title">Name: <h2 class="profileInfo__username">
+            {% if profile.first_name and profile.last_name %}
+                {{ profile.first_name }} {{ profile.last_name }}
+            {% else %}
+                ______
+            {% endif %}
+        </h2></h2>
+        <h2 class="profileInfo__title">Username: <h2 class="profileInfo__username">{{ profile.user }}</h2></h2>
+        <h2 class="profileInfo__title">Contact: <h2 class="profileInfo__username">______</h2></h2>
 
     </div>
-    {% with name="Edit Profile" classes="btn btn--editProfile" type="" %}
+    {% with name="Edit Profile" classes="btn btn--editProfile" type="" click=""%}
         {% include "components/buttonComponent.html"  %}
     {% endwith %}
 </div>
