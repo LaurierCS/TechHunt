@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm, CreateProjectForm
 from django.db.models import Q
 from .models import Project, Tag, Profile, Favorite, Comment
 from .query import search_projects
-
 
 def login_view(request):
 
@@ -53,7 +53,6 @@ def register_view(request):
     context = {'form': form }
 
     return render(request, template_name, context)
-
 
 def homepage_view(request):
 
