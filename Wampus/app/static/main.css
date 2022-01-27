@@ -153,7 +153,6 @@ a {
   width: 100px;
   height: 100px;
   margin: 10% 0 15% 10%;
-  background-color: #0098fe59;
 }
 
 .inputField {
@@ -354,12 +353,16 @@ a {
 }
 
 .contentContainer--login {
-  margin: 5% 35% auto auto;
+  margin: 0;
   width: 470px;
   height: 300px;
   border: 3px solid #2C2C2C;
   border-radius: 7px;
   background-color: #2C2C2C;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .inputField--username {
@@ -400,12 +403,16 @@ a {
 }
 
 .contentContainer--register {
-  margin: 5% 35% auto auto;
+  margin: 0;
   width: 470px;
   height: 350px;
   border: 3px solid #9E9E9E;
   border-radius: 7px;
   background-color: #9E9E9E;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .inputField--email {
