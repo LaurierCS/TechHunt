@@ -22,4 +22,7 @@ class CreateProjectForm(forms.ModelForm):
 
     class Meta:
         model = Project
-        fields = ('name', 'description', 'tags', )
+        fields =  ('name', 'description', 'preview_image', 'rating', 'tags', 'code_link', )
+        widgets = {
+            'tags': forms.CheckboxSelectMultiple(),
+        }
