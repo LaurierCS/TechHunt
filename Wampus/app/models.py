@@ -27,10 +27,12 @@ class Project(models.Model):
     # Project Fields
     name = models.CharField(max_length=100, null=True)
     description = models.CharField(max_length=250, null=True, blank=True)
+    preview_image = models.ImageField(null=True, blank=True)
     rating = models.IntegerField(default=0, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True)
     tags = models.ManyToManyField('Tag', blank=True)
+    code_link = models.CharField(max_length=300, null=True, blank=True)
 
     # Project Attributes
     def __str__(self):
