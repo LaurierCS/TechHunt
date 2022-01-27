@@ -122,11 +122,13 @@ def createproject_view(request):
     
     # Get current user profile
     profile = request.user.profile
+    form = CreateProjectForm()
 
     if request.method == 'POST':
         form = CreateProjectForm(request.POST, request.FILES)
 
         if form.is_valid():
+            print('Form is valid')
             project = form.save(commit=False)
             project.profile = profile
             project.save()
