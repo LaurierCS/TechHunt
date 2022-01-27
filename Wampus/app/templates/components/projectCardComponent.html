@@ -1,13 +1,19 @@
+{% load static %}
+
 <div class="projectCard">
     <div class="project__text">
         <h2 class="projectCard__title">{{ name }}</h2>
         <h2 class="projectCard__description">{{ desc }}</h2>
     </div>
-    {% with name="Rate this project" classes="btn btn--rate" type="" click=""%}
-        {% include "components/buttonComponent.html"  %}
-    {% endwith %}
 
-    {% with name="Add to favorites" classes="btn btn--favorite" type="" click="" %}
-        {% include "components/buttonComponent.html"  %}
-    {% endwith %}
+    {% if project.profile.user != profile.user %}
+        {% with name="Rate this project" classes="btn btn--rate" type="" click=""%}
+            {% include "components/buttonComponent.html"  %}
+        {% endwith %}
+
+        {% with name="Add to favorites" classes="btn btn--favorite" type="" click="" %}
+            {% include "components/buttonComponent.html"  %}
+        {% endwith %}
+    {% endif %}
+    
 </div>
