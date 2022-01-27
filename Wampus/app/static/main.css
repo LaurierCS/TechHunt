@@ -87,8 +87,8 @@ a {
   display: table-cell;
   vertical-align: middle;
   color: #ffffff;
-  font-family: sans-serif;
-  font-weight: lighter;
+  font-family: 'Fauna One';
+  font-size: medium;
 }
 
 .pageContent {
@@ -167,6 +167,7 @@ a {
   background-color: #0098fe;
   border: solid #0098fe;
   color: #ffffff;
+  font-family: Cinzel;
 }
 
 .btn:hover{
@@ -245,19 +246,19 @@ a {
   overflow-x: auto;
 }
 
-.profileInfo__title {
+.profileInfo__label {
   margin: 0;
   padding: 3% 5% 0 5%;
-  float: left;
-  font-family: monospace;
+  font-family: 'Fauna One';
+  font-size: large;
 }
 
-.profileInfo__username {
+.profileInfo__info {
   margin: 0;
-  padding: 4% 5% 0 5%;
+  padding: 0 5% 0 5%;
   font-weight: normal;
-  font-size: 18px;
-  font-family: monospace;
+  font-size: 15px;
+  font-family: 'Fauna One';
 }
 
 /*Component modifiers*/
@@ -270,11 +271,14 @@ a {
   text-align: left;
   justify-content: flex-start;
   background-color: #eeeeee;
+  font-family: 'Fauna One';
+  font-size: small;
 }
 
 .inputField--search::placeholder {
   color: #6e6e6ebb;
-  font-family: 'Trebuchet MS';
+  font-family: 'Fauna One';
+  font-size: small;
 }
 
 .inputField--search:hover {
@@ -354,6 +358,7 @@ a {
   background-color: #2C2C2C;
   border: 3px solid #0098fe;
   color: #eeeeee;
+  font-family: 'Fauna One';
 }
 
 .inputField--password {
@@ -371,10 +376,12 @@ a {
 
 .inputField--username::placeholder {
   color: #0098fe;
+  font-family: 'Fauna One';
 }
 
 .inputField--password::placeholder {
   color: #0098fe;
+  font-family: 'Fauna One';
 }
 
 .contentContainer--register {
@@ -396,6 +403,7 @@ a {
   justify-content: flex-start;
   background-color: #9E9E9E;
   border: 3px solid #6000fe;
+  font-family: 'Fauna One';
 }
 
 .inputField--username--register {
@@ -408,6 +416,7 @@ a {
   justify-content: flex-start;
   background-color: #9E9E9E;
   border: 3px solid #6000fe;
+  font-family: 'Fauna One';
 }
 
 .inputField--password--register {
@@ -424,14 +433,17 @@ a {
 
 .inputField--email::placeholder {
   color: #6000fe;
+  font-family: 'Fauna One';
 }
 
 .inputField--username--register::placeholder {
   color: #6000fe;
+  font-family: 'Fauna One';
 }
 
 .inputField--password--register::placeholder {
   color: #6000fe;
+  font-family: 'Fauna One';
 }
 
 .contentContainer--tags--homepage {
@@ -525,19 +537,26 @@ a {
   justify-content: flex-start;
   background-color: #ffffff;
   border: 2px solid #0098fe;
+  font-family: 'Fauna One';
+  font-size: small;
 }
 
-.inputField--description {
+.textarea--description {
   width: 70%;
   min-width: 50%;
   height: 100px;
   margin: 1% 0 0 2%;
-  padding: 0 0 0 1%;
+  padding: 15px;
   font-size: 17px;
   text-align: left;
   justify-content: flex-start;
   background-color: #ffffff;
   border: 2px solid #0098fe;
+  font-family: 'Fauna One';
+  font-size: small;
+  border-radius: 20px;
+  resize: none;
+  vertical-align: middle;
 }
 
 .inputField--members {
@@ -550,6 +569,8 @@ a {
   justify-content: flex-start;
   background-color: #ffffff;
   border: 2px solid #0098fe;
+  font-family: 'Fauna One';
+  font-size: small;
 }
 
 .contentContainer--image {
