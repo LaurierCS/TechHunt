@@ -66,18 +66,38 @@ def homepage_view(request):
     favorites = Favorite.objects.filter(profile=profile)  # Get the user's favorites
     tags = Tag.objects.all() # Get all tags
     popular_projects = Project.objects.all().order_by('-rating')[:5] # Get most popular projects
-    #search_results = search_projects(request) # Get search results
 
     context = {
         'projects': projects,
         'profile': profile,
         'favorites': favorites,
         'tags': tags,
-        'popular_projects': popular_projects,
-        #'search_results': search_results
+        'popular_projects': popular_projects
     }
 
     template_name = 'homepage.html'
+
+    return render(request, template_name, context)
+
+def search_projects_view(request):
+    user = request.user # Get the user object
+     
+    profile = Profile.objects.get(user=user) # Get the user's profile
+
+    if request.method == "GET":
+        return redirect('/')
+
+    if request.method == "POST":
+        search_value = request.POST['search_value']
+        search_results = search_projects(search_value) # Get search results
+
+    context = {
+        'profile': profile,
+        'search_value': search_value,
+        'search_results': search_results
+    }
+
+    template_name = 'search-projects.html'
 
     return render(request, template_name, context)
 
@@ -104,13 +124,15 @@ def profilepage_view(request):
     return render(request, template_name, context)
 
 
-def project_view(request):
+def project_view(request, project_name):
     user = request.user # Get the user object
      
     profile = Profile.objects.get(user=user) # Get the user's profile
+    project = Project.objects.get(name=project_name)
 
     context = {
-        'profile': profile
+        'profile': profile,
+        'project': project
     }
 
     template_name = 'project.html'

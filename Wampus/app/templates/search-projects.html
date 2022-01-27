@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+<!-- Title -->
+{% block title %}Search - {{search_value}}{% endblock title %}
+
+{% block content %}
+
+    {% if search_value %}
+        {% if search_results %}
+            <div class="contentContainer contentContainer--searched ">
+                {% for project in search_results %}
+                    {% with name=project.name desc=project.description %}
+                        {% include "components/projectCardComponent.html" %}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <h1>Not found</h1>
+        {% endif %}
+    {% endif %}
+{% endblock content %}
