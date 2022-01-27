@@ -8,7 +8,20 @@
 <div class="yourprojects">
     <h1 style="font-family: Cinzel;">Your Projects</h1>
     <div class="contentContainer contentContainer--yourProjects--profile">
-      {% include "components/projectCardComponent.html" %}
+        {% if projects %}
+            {% for project in projects %}
+                {% with name=project.name desc=project.description %}
+                    {% include "components/projectCardComponent.html" %}
+                {% endwith %}
+            {% endfor %}
+        {% else %}
+            <div class="yourprojects--noProjects">
+              <h1 style="font-family: fantasy;">No Projects?</h1>
+              {% with name="Create a project" classes="btn" type="" click="location.href='/create-project'" %}
+                {% include "components/buttonComponent.html"  %}
+              {% endwith %}
+            </div>
+        {% endif %}
     </div>
 </div>
 <div class="favourites">
@@ -18,7 +31,17 @@
     </div>
     <h1 style="font-family: Cinzel;">Favourites</h1>
     <div class="contentContainer contentContainer--favourite--profile">
-        {% include "components/projectCardComponent.html" %}
+        {% if favorites %}
+            {% for project in favorites %}
+                {% with name=project.project.name desc=project.project.description %}
+                    {% include "components/projectCardComponent.html" %}
+                {% endwith %}
+            {% endfor %}
+        {% else %}
+            <div class="noFavorites">
+                <h1 style="font-family: fantasy;">No Favorites</h1>
+            </div>
+        {% endif %}
     </div>
 </div>
 {% endblock content %}

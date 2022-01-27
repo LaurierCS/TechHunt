@@ -19,7 +19,7 @@
       {% else %}
         <div class="yourprojects--noProjects">
           <h1 style="font-family: 'Fauna One';font-size:medium;">No Projects?</h1>
-          {% with name="Create a project" classes="btn" type="" click="" %}
+          {% with name="Create a project" classes="btn" type="" click="location.href='/create-project'" %}
             {% include "components/buttonComponent.html"  %}
           {% endwith %}
         </div>
@@ -53,7 +53,7 @@
       {% else %}
         <div class="yourprojects--noProjects">
           <h1 style="font-family: 'Fauna One';font-size:medium;">No Community Projects</h1>
-          {% with name="Create a project" classes="btn" type="" click="" %}
+          {% with name="Create a project" classes="btn" type="" click="location.href='/create-project'" %}
             {% include "components/buttonComponent.html"  %}
           {% endwith %}
         </div>
@@ -67,7 +67,7 @@
   <div class="contentContainer contentContainer--favourite--homepage">
     {% if favorites %}
       {% for project in favorites %}
-        {% with name=project.name desc=project.description %}
+        {% with name=project.project.name desc=project.project.description %}
           {% include "components/projectCardComponent.html" %}
         {% endwith %}
       {% endfor %}

@@ -9,21 +9,24 @@
 <div class="createproject">
     <h1 style="font-family: Cinzel;">Create Project</h1>
     <div class="contentContainer contentContainer--createproject">
-        <h2 style="font-family:'Fauna One';font-size:medium;">Title <input type="text" class="inputField inputField--title"></h2>
-        <h2 style="font-family:'Fauna One';font-size:medium;">Description <textarea class="textarea--description" name="Text1"></textarea></h2>
-        <h2 style="font-family:'Fauna One';font-size:medium;">Team Members <input type="text" class="inputField inputField--members"></h2>
-        <div class="contentContainer contentContainer--imageButton">
-            <input type="file" id="uploadImg" hidden>
-            <label for="uploadImg" style="font-family: 'Fauna One';font-size: small;">Add Image</label>
-        </div>
-        <div class="contentContainer contentContainer--image" id="imagePreview">
-            <img src="" alt="Image Preview" class="image-preview" hidden>
-            <span style="font-family: 'Fauna One';font-size:medium;font-style: italic;"class="image-preview__default">Image Preview</span>
-        </div>
-        
-        {% with name="Create" classes="btn btn--create" type="submit" %}
-            {% include "components/buttonComponent.html"  %}
-        {% endwith %}
+        <form method="POST">
+            {% csrf_token %}
+            <h2 style="font-family:'Fauna One';font-size:medium;">Title <input type="text" class="inputField inputField--title" name="title"></h2>
+            <h2 style="font-family:'Fauna One';font-size:medium;">Description <textarea class="textarea--description" name="description"></textarea></h2>
+            <h2 style="font-family:'Fauna One';font-size:medium;">Team Members <input type="text" class="inputField inputField--members"></h2>
+            <div class="contentContainer contentContainer--imageButton">
+                <input type="file" id="uploadImg" hidden>
+                <label for="uploadImg" style="font-family: 'Fauna One';font-size: small;">Add Image</label>
+            </div>
+            <div class="contentContainer contentContainer--image" id="imagePreview">
+                <img src="" alt="Image Preview" class="image-preview" hidden>
+                <span style="font-family: 'Fauna One';font-size: medium;font-style: italic;" class="image-preview__default">Image Preview</span>
+            </div>
+            
+            {% with name="Create" classes="btn btn--create" type="submit" click=""%}
+                {% include "components/buttonComponent.html"  %}
+            {% endwith %}
+        </form>
     </div>
 </div>
 

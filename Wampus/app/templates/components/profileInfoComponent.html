@@ -1,11 +1,18 @@
+{% load static %}
+
 <div class="profileInfoCard">
     <div class="profileInfo__text">
-        <h2 class="profileInfo__label">Name: <a class="profileInfo__info">Name</a></h2>
-        <h2 class="profileInfo__label">Username: <a class="profileInfo__info">Username</a></h2>
-        <h2 class="profileInfo__label">Contact: <a class="profileInfo__info">Info</a></h2>
-
+        <h2 class="profileInfo__label">Name: <a class="profileInfo__info">
+            {% if profile.first_name and profile.last_name %}
+                {{ profile.first_name }} {{ profile.last_name }}
+            {% else %}
+                ______
+            {% endif %}
+        </a></h2>
+        <h2 class="profileInfo__label">Username: <a class="profileInfo__info">{{ profile.user }}</a></h2>
+        <h2 class="profileInfo__label">Contact: <a class="profileInfo__info">______</a></h2>
     </div>
-    {% with name="Edit Profile" classes="btn btn--editProfile" type="" %}
+    {% with name="Edit Profile" classes="btn btn--editProfile" type="" click=""%}
         {% include "components/buttonComponent.html"  %}
     {% endwith %}
 </div>
