@@ -5,78 +5,90 @@
 
 <!-- Main Page Content -->
 {% block content %}
+    <div class="homepage">
+        <div class="homepage--middle">
+            <!-- Your Projects -->
+            <h1 style="font-family: Cinzel;">Your Projects</h1>
+            <div class="contentContainer contentContainer--yourProjects--homepage">
+                {% if projects %}
+                    {% for project in projects %}
+                        {% with name=project.name desc=project.description %}
+                            {% include "components/projectCardComponent.html" %}
+                        {% endwith %}
+                    {% endfor %}
+                {% else %}
+                    <div class="yourprojects--noProjects">
+                        <h1 style="font-family: 'Fauna One';font-size:medium;">No Projects?</h1>
+                        {% with name="Create a project" classes="btn" type="" click="location.href='/create-project'" %}
+                            {% include "components/buttonComponent.html"  %}
+                        {% endwith %}
+                    </div>
+                {% endif %}
+            </div>
 
-<!-- User Projects -->
-<div class="yourprojects">
-    <h1 style="font-family: Cinzel;">Your Projects</h1>
-    <div class="contentContainer contentContainer--yourProjects--homepage">
-      {% if projects %}
-        {% for project in projects %}
-          {% with name=project.name desc=project.description %}
-            {% include "components/projectCardComponent.html" %}
-          {% endwith %}
-        {% endfor %}
-      {% else %}
-        <div class="yourprojects--noProjects">
-          <h1 style="font-family: 'Fauna One';font-size:medium;">No Projects?</h1>
-          {% with name="Create a project" classes="btn" type="" click="location.href='/create-project'" %}
-            {% include "components/buttonComponent.html"  %}
-          {% endwith %}
+            <!-- Tags -->
+            <h2 style="font-family: Cinzel;">Community</h2>
+            <div class="contentContainer contentContainer--tags--homepage">
+                {% if tags %}
+                    {% for tag in tags %}
+                        {% with name=tag.name %}
+                            {% include "components/tagComponent.html" %}
+                        {% endwith %}
+                    {% endfor %}
+                {% else %}
+                    <div class="noTags">
+                        <h3 style="font-family: 'Fauna One';font-size:small;">No Tags available</h3>
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Community Projects -->
+            <div class="contentContainer contentContainer--communityprojects--homepage">
+                {% if popular_projects %}
+                  {% for project in popular_projects %}
+                    {% if forloop.counter|divisibleby:2 %}
+                            {% with name=project.name desc=project.description %}
+                                {% include "components/projectCardComponent.html" %}
+                            {% endwith %}
+                        </div>
+                    {% else %}
+                        <div class="project__rows">
+                            {% with name=project.name desc=project.description %}
+                                {% include "components/projectCardComponent.html" %}
+                            {% endwith %}
+                    {% endif %}
+                  {% endfor %}
+                  {% if popular_projects|length|divisibleby:2  %}
+                  {% else %}
+                    </div>
+                  {% endif %}
+                {% else %}
+                    <div class="yourprojects--noProjects">
+                      <h1 style="font-family: 'Fauna One';font-size:medium;">No Community Projects</h1>
+                      {% with name="Create a project" classes="btn" type="" click="location.href='/create-project'" %}
+                        {% include "components/buttonComponent.html"  %}
+                      {% endwith %}
+                    </div>
+                {% endif %}
+            </div>
         </div>
-      {% endif %}
+        <div class="homepage--right">
+            <div class="favourites--homepage">
+                <h1 style="font-family: Cinzel;">Favourites</h1>
+                <div class="contentContainer contentContainer--favourite--homepage">
+                    {% if favorites %}
+                        {% for project in favorites %}
+                            {% with name=project.project.name desc=project.project.description %}
+                                {% include "components/projectCardComponent.html" %}
+                            {% endwith %}
+                        {% endfor %}
+                    {% else %}
+                        <div class="noFavorites">
+                            <h1 style="font-family: 'Fauna One';font-size:medium;">No Favorites</h1>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
     </div>
-  
-  <!-- Tags -->
-  <h2 style="font-family: Cinzel;">Community</h2>
-  <div class="contentContainer contentContainer--tags--homepage">
-    {% if tags %}
-      {% for tag in tags %}
-        {% with name=tag.name %}
-          {% include "components/tagComponent.html" %}
-        {% endwith %}
-      {% endfor %}
-    {% else %}
-      <div class="noTags">
-        <h3 style="font-family: 'Fauna One';font-size:small;">No Tags available</h3>
-      </div>
-    {% endif %}
-  </div>
-
-  <!-- Community Projects -->
-  <div class="contentContainer contentContainer--communityprojects--homepage">
-    {% if popular_projects %}
-        {% for project in popular_projects %}
-          {% with name=project.name desc=project.description %}
-            {% include "components/projectCardComponent.html" %}
-          {% endwith %}
-        {% endfor %}
-      {% else %}
-        <div class="yourprojects--noProjects">
-          <h1 style="font-family: 'Fauna One';font-size:medium;">No Community Projects</h1>
-          {% with name="Create a project" classes="btn" type="" click="location.href='/create-project'" %}
-            {% include "components/buttonComponent.html"  %}
-          {% endwith %}
-        </div>
-      {% endif %}
-  </div>
-</div>
-
-<!-- Favorites -->
-<div class="favourites">
-  <h1 style="font-family: Cinzel;">Favourites</h1>
-  <div class="contentContainer contentContainer--favourite--homepage">
-    {% if favorites %}
-      {% for project in favorites %}
-        {% with name=project.project.name desc=project.project.description %}
-          {% include "components/projectCardComponent.html" %}
-        {% endwith %}
-      {% endfor %}
-    {% else %}
-      <div class="noFavorites">
-        <h1 style="font-family: 'Fauna One';font-size:medium;">No Favorites</h1>
-      </div>
-    {% endif %}
-  </div>
-</div>
-  
 {% endblock content %}

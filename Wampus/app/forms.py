@@ -2,7 +2,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Project
+from .models import Project, Comment
 
 # Form for regsitering a new user
 class RegisterForm(UserCreationForm):
@@ -25,4 +25,15 @@ class CreateProjectForm(forms.ModelForm):
         fields =  ('name', 'description', 'preview_image', 'rating', 'tags', 'code_link', )
         widgets = {
             'tags': forms.CheckboxSelectMultiple(),
+        }
+
+# Form for commenting on a project
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('text', )
+
+        labels = {
+            'text': 'Add a comment',
         }

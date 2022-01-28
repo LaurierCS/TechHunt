@@ -1,3 +1,4 @@
+# Imports
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -66,18 +67,38 @@ def homepage_view(request):
     favorites = Favorite.objects.filter(profile=profile)  # Get the user's favorites
     tags = Tag.objects.all() # Get all tags
     popular_projects = Project.objects.all().order_by('-rating')[:5] # Get most popular projects
-    #search_results = search_projects(request) # Get search results
 
     context = {
         'projects': projects,
         'profile': profile,
         'favorites': favorites,
         'tags': tags,
-        'popular_projects': popular_projects,
-        #'search_results': search_results
+        'popular_projects': popular_projects
     }
 
     template_name = 'homepage.html'
+
+    return render(request, template_name, context)
+
+def search_projects_view(request):
+    user = request.user # Get the user object
+     
+    profile = Profile.objects.get(user=user) # Get the user's profile
+
+    if request.method == "GET":
+        return redirect('/')
+
+    if request.method == "POST":
+        search_value = request.POST['search_value']
+        search_results = search_projects(search_value) # Get search results
+
+    context = {
+        'profile': profile,
+        'search_value': search_value,
+        'search_results': search_results
+    }
+
+    template_name = 'search-projects.html'
 
     return render(request, template_name, context)
 
@@ -104,13 +125,15 @@ def profilepage_view(request):
     return render(request, template_name, context)
 
 
-def project_view(request):
+def project_view(request, project_name):
     user = request.user # Get the user object
      
     profile = Profile.objects.get(user=user) # Get the user's profile
+    project = Project.objects.get(name=project_name)
 
     context = {
-        'profile': profile
+        'profile': profile,
+        'project': project
     }
 
     template_name = 'project.html'
@@ -138,6 +161,45 @@ def createproject_view(request):
     template_name = 'create-project.html'
 
     return render(request, template_name, context)
+
+@login_required(login_url='/login/')
+def updateproject_view(request, pk):
+    
+    # Get current user profile
+    profile = request.user.profile
+    project = Project.objects.get(pk=pk)
+    form = CreateProjectForm(instance=project)
+
+    if request.method == 'POST':
+        form = CreateProjectForm(request.POST, request.FILES, instance=project)
+
+        if form.is_valid():
+            print('Form is valid')
+            project = form.save()
+            project.profile = profile
+            project.save()
+            
+    context = {'form': form }       
+
+    template_name = 'project.html' # Template might need to change?
+
+    return render(request, template_name, context)
+
+@login_required(login_url='/login/')
+def deleteproject_view(request, pk):
+    
+    # Get current user profile
+    profile = request.user.profile
+    project = Project.objects.get(pk=pk)
+
+    if request.method == 'POST':
+        project.delete()
+        
+        return redirect('profile')
+
+    template_name = ''
+
+    return render(request, template_name)
 
 def aboutus_view(request):
     user = request.user # Get the user object

@@ -1,3 +1,9 @@
 {% load static %}
 
-<input type="text" class="inputField inputField--search" placeholder="Search Projects">
+<form method="POST" action="{% url 'search-projects' %}">
+    {% csrf_token %}
+    <input type="text" class="inputField inputField--search" placeholder="Search Projects" name="search_value" required>
+    {% with name="Search" classes="btn" type="submit" click="" %}
+        {% include "components/buttonComponent.html"  %}
+    {% endwith %}
+</form>
