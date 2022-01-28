@@ -1,3 +1,7 @@
 {% load static %}
 
-<div class="tag">{{ name }}</div>
+<form method="POST" action="{% url 'search-projects' %}" class="tagForm">
+    {% csrf_token %}
+    <input type="text" class="inputField inputField--search" placeholder="Search Projects" name="search_value" value="{{name}}" hidden/>
+    <button class="tag" onclick="{% url 'search-projects' %}">{{ name }}</button>
+</form>
