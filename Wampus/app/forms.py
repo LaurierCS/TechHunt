@@ -26,3 +26,14 @@ class CreateProjectForm(forms.ModelForm):
         widgets = {
             'tags': forms.CheckboxSelectMultiple(),
         }
+
+# Form for commenting on a project
+class CommentForm(forms.Form):
+
+    class Meta:
+        model = Comment
+        fields = ('text', )
+
+        labels = {
+            'text': 'Add a comment',
+        }
