@@ -1,7 +1,8 @@
 # Imports
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.fields import CharField
+from django.db.models.fields import *
+from django.template.defaultfilters import slugify
 
 # Profile Model
 class Profile(models.Model):
@@ -11,6 +12,7 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=50, null=True, blank=True)
     last_name = models.CharField(max_length=50, null=True, blank=True)
     bio = models.TextField(max_length=500, null=True, blank=True)
+    contact_email = models.EmailField(max_length=200, null=True, blank=True)
     location = models.CharField(max_length=50, null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
 
@@ -25,6 +27,7 @@ class Profile(models.Model):
 class Project(models.Model):
 
     # Project Fields
+    id = models.AutoField(primary_key=True, editable=False)
     name = models.CharField(max_length=100, null=True)
     description = models.CharField(max_length=250, null=True, blank=True)
     preview_image = models.ImageField(null=True, blank=True)
@@ -35,8 +38,22 @@ class Project(models.Model):
     code_link = models.CharField(max_length=300, null=True, blank=True)
 
     # Project Attributes
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Project, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.name
+
+    # Project Properties
+    @property
+    def get_comments(self):
+        
+        comments = self.comment_set.all()
+        self.comments = comments
+
+        self.save()
+        
 
 # Favorite Model
 class Favorite(models.Model):
@@ -44,6 +61,7 @@ class Favorite(models.Model):
     # Favorite Fields
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
     project = models.OneToOneField('Project', on_delete=models.CASCADE)
+    date_created = models.DateTimeField(auto_now_add=True)
 
     # Favorite Attributes
     def __str__(self):
@@ -80,4 +98,3 @@ class Comment(models.Model):
     # Comment Attributes
     def __str__(self):
         return self.text
-        
