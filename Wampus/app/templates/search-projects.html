@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+<!-- Title -->
+{% block title %}Search - {{search_value}}{% endblock title %}
+
+{% block content %}
+    {% if search_value %}
+        {% if search_results %}
+            <div class="contentContainer contentContainer--searched ">
+                {% for project in search_results %}
+                    {% if forloop.counter|divisibleby:2 %}
+                            {% with name=project.name desc=project.description %}
+                                {% include "components/projectCardComponent.html" %}
+                            {% endwith %}
+                        </div>
+                    {% else %}
+                        <div class="project__rows">
+                            {% with name=project.name desc=project.description %}
+                                {% include "components/projectCardComponent.html" %}
+                            {% endwith %}
+                   {% endif %}
+                {% endfor %}
+                {% if search_results|length|divisibleby:2  %}
+                {% else %}
+                    </div>
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="contentContainer contentContainer--searched ">
+                <h1 style="font-family: 'Fauna One';font-size:medium;">No projects found</h1>
+            </div>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock content %}

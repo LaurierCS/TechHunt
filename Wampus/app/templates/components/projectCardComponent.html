@@ -2,7 +2,7 @@
 
 <div class="projectCard">
     <div class="project__text">
-        <h2 class="projectCard__title">{{ name }}</h2>
+        <h2 class="projectCard__title"><a href="{% url 'project-page' name %}">{{ name }}</a></h2>
         <h2 class="projectCard__description">{{ desc }}</h2>
     </div>
 

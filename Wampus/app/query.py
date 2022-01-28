@@ -1,9 +1,9 @@
-def search_projects(request):
+from .models import Project
+from django.db.models import Q
 
-    query = request.GET.get('query') # Get the search query
+def search_projects(query):
 
-    # If the query is empty, return all projects
-    if query == '':
+    if query is None:
         return Project.objects.all()
 
     search_results = Project.objects.filter(
