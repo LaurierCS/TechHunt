@@ -195,12 +195,12 @@ a {
 }
 
 .projectCard {
-  min-width: 360px;
+  min-width: 330px;
   min-height: 225px;
   width:360px;
   height: 225px;
   display: flex;
-  margin: 2%;
+  margin: 2% 2% 2% 2%;
   flex-direction: column;
   background-color: #eeeeee;
   border-radius: 10px;
@@ -322,10 +322,11 @@ a {
 
 .contentContainer--yourProjects--homepage {
   width: 95%;
-  min-height: 250px;
+  min-height: 275px;
   height: fit-content;
   display: flex;
   flex-direction: row;
+  align-items: center;
   overflow-x: auto;
 }
 
@@ -340,29 +341,28 @@ a {
 
 .contentContainer--communityprojects--homepage {
   width: 95%;
+  min-height: 250px;
   max-height: 500px;
   height: fit-content;
-  min-height: 250px;
   margin: 2% 0 0 0;
   overflow-x: auto;
 }
 
-.favourites--homepage {
-  width: 100%;
-}
-
 .contentContainer--favourite--homepage {
   min-width: 85%;
-  width: fit-content;
-  max-width: 87%;
+  max-width: 85%;
   min-height: 250px;
   height: fit-content;
-  max-height: 900px;
-  margin: 1%;
-  padding: 3px;
+  max-height: 920px;
+  margin: 2%;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.favourites--homepage {
+  width: 100%;
 }
 
 .yourprojects--noProjects{
@@ -690,6 +690,7 @@ label {
   height: fit-content;
   min-height: 250px;
   margin: 2% 0 0 2%;
+  text-align: center;
 }
 
 .project__rows{
