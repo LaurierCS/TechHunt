@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.fields import *
 from django.template.defaultfilters import slugify
+import uuid
 
 # Profile Model
 class Profile(models.Model):
@@ -27,7 +28,7 @@ class Profile(models.Model):
 class Project(models.Model):
 
     # Project Fields
-    id = models.AutoField(primary_key=True, editable=False)
+    id = models.UUIDField(primary_key=True, unique=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100, null=True)
     description = models.CharField(max_length=250, null=True, blank=True)
     preview_image = models.ImageField(null=True, blank=True)
@@ -47,14 +48,11 @@ class Project(models.Model):
 
     # Project Properties
     @property
-    def get_comments(self):
+    def get_commenters(self):
         
-        comments = self.comment_set.all()
-        self.comments = comments
-
-        self.save()
+        commenters = self.comment_set.all().values_list('profile', flat=True)
+        return commenters
         
-
 # Favorite Model
 class Favorite(models.Model):
 
