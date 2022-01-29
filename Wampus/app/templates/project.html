@@ -5,5 +5,28 @@
 
 <!-- Main Page Content -->
 {% block content %}
-    <h1>This is a project page for {{project.name}}</h1>
+
+<div class="contentContainer contentContainer--individualproject--image">
+    <h1>Project Name</h1>
+</div>
+
+<div class="members">
+    <h2>Team Members</h2>
+    <div class="contentContainer contentContainer--individualproject--members">
+    </div>
+</div>
+
+<div class="description">
+    <h2>Description</h2>
+    <div class="contentContainer contentContainer--individualproject--description">
+    </div>
+</div>
+
+<div class="individualpage--bottom">
+    <h2>Tags</h2>
+    <div class="contentContainer contentContainer--tags--individualproject">
+        {% include "components/tagComponent.html" %}
+    </div>
+</div>
+
 {% endblock content %}
