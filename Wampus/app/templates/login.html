@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
     
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel|Fauna+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Karla">
 </head>
 <style>
     body {
@@ -22,7 +22,7 @@
 <div class="contentContainer contentContainer--login">
     <form method="POST">
         {% csrf_token %}
-        <h1 style="color: #0098fe;text-align: center;font-size:xx-large;font-family: Cinzel;">Login</h1>
+        <h1 style="color: #0098fe;text-align: center;font-size:xx-large;font-family: Lora;">Login</h1>
         <input type="text" class="inputField inputField--username" placeholder="Username" name="username" required>
         <input type="password" class="inputField inputField--password" placeholder="Password" name="password" required>
 
