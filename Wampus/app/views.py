@@ -1,3 +1,4 @@
+# Imports
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -160,6 +161,45 @@ def createproject_view(request):
     template_name = 'create-project.html'
 
     return render(request, template_name, context)
+
+@login_required(login_url='/login/')
+def updateproject_view(request, pk):
+    
+    # Get current user profile
+    profile = request.user.profile
+    project = Project.objects.get(pk=pk)
+    form = CreateProjectForm(instance=project)
+
+    if request.method == 'POST':
+        form = CreateProjectForm(request.POST, request.FILES, instance=project)
+
+        if form.is_valid():
+            print('Form is valid')
+            project = form.save()
+            project.profile = profile
+            project.save()
+            
+    context = {'form': form }       
+
+    template_name = 'project.html' # Template might need to change?
+
+    return render(request, template_name, context)
+
+@login_required(login_url='/login/')
+def deleteproject_view(request, pk):
+    
+    # Get current user profile
+    profile = request.user.profile
+    project = Project.objects.get(pk=pk)
+
+    if request.method == 'POST':
+        project.delete()
+        
+        return redirect('profile')
+
+    template_name = ''
+
+    return render(request, template_name)
 
 def aboutus_view(request):
     user = request.user # Get the user object
