@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+<!-- Title -->
+{% block title %}Edit Profile{% endblock title %}
+
+<!-- Main Page Content -->
+{% block content %}
+    <div class="editProfile">
+        <h1 style="font-family: Lora;">Edit Profile</h1>
+        <div class="contentContainer contentContainer--editProfile">
+            <div class="firstname">
+                <h2 style="font-family:Karla;font-size:medium;">First Name</h2>
+                <input type="text" class="inputField inputField--firstname" name="first-name">
+            </div>
+            <div class="lastname">
+                <h2 style="font-family:Karla;font-size:medium;">Last Name</h2>
+                <input type="text" class="inputField inputField--lastname" name="last-name">
+            </div>
+            <div class="username">
+                <h2 style="font-family:Karla;font-size:medium;">Username</h2>
+                <input type="text" class="inputField inputField--username--editProfile" name="username">
+            </div>
+            <div class="email">
+                <h2 style="font-family:Karla;font-size:medium;">Email</h2>
+                <input type="text" class="inputField inputField--email--editProfile" name="email">
+            </div>
+            <div class="bio">
+                <h2 style="font-family:Karla;font-size:medium;">Bio</h2>
+                <textarea class="textarea--bio" name="description"></textarea> 
+            </div>
+        </div>
+    </div>
+    <div class="profileImgContainer">
+        <div class="profileImg" style="background-image:url('../static/images/placeholder.png')"></div>
+        {% with name="Edit" classes="btn btn--editProfileImage" type="submit" click=""%}
+            {% include "components/buttonComponent.html"  %}
+        {% endwith %}
+    </div>
+{% endblock content %}

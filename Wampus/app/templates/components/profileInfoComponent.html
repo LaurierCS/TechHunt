@@ -9,10 +9,11 @@
                 ______
             {% endif %}
         </a></h2>
-        <h2 class="profileInfo__label">Username: <a class="profileInfo__info">{{ profile.user }}</a></h2>
+        <h2 class="profileInfo__label">Username: <a class="profileInfo__info">@{{ profile.user }}</a></h2>
         <h2 class="profileInfo__label">Contact: <a class="profileInfo__info">______</a></h2>
+        <h2 class="profileInfo__label">Bio: <a class="profileInfo__info">______</a></h2>
     </div>
-    {% with name="Edit Profile" classes="btn btn--editProfile" type="" click=""%}
+    {% with name="Edit Profile" classes="btn btn--editProfile" type="" click="location.href='/edit-profile'"%}
         {% include "components/buttonComponent.html"  %}
     {% endwith %}
 </div>

@@ -18,7 +18,7 @@
                     {% endfor %}
                 {% else %}
                     <div class="yourprojects--noProjects">
-                        <h1 style="font-family: Karla;font-size:medium;">No Projects?</h1>
+                        <h1 style="font-family: Karla;font-size:large;">No Projects?</h1>
                         {% with name="Create a project" classes="btn" type="" click="location.href='/create-project'" %}
                             {% include "components/buttonComponent.html"  %}
                         {% endwith %}
@@ -64,7 +64,7 @@
                   {% endif %}
                 {% else %}
                     <div class="yourprojects--noProjects">
-                      <h1 style="font-family: Karla;font-size:medium;">No Community Projects</h1>
+                      <h1 style="font-family: Karla;font-size:large;">No Community Projects</h1>
                       {% with name="Create a project" classes="btn" type="" click="location.href='/create-project'" %}
                         {% include "components/buttonComponent.html"  %}
                       {% endwith %}
@@ -84,7 +84,7 @@
                         {% endfor %}
                     {% else %}
                         <div class="noFavorites">
-                            <h1 style="font-family: Karla;font-size:medium;">No Favorites</h1>
+                            <h1 style="font-family: Karla;font-size:large;">No Favorites</h1>
                         </div>
                     {% endif %}
                 </div>
