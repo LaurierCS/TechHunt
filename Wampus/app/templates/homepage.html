@@ -8,7 +8,7 @@
     <div class="homepage">
         <div class="homepage--middle">
             <!-- Your Projects -->
-            <h1 style="font-family: Cinzel;">Your Projects</h1>
+            <h1 style="font-family: Lora;">Your Projects</h1>
             <div class="contentContainer contentContainer--yourProjects--homepage">
                 {% if projects %}
                     {% for project in projects %}
@@ -18,7 +18,7 @@
                     {% endfor %}
                 {% else %}
                     <div class="yourprojects--noProjects">
-                        <h1 style="font-family: 'Fauna One';font-size:medium;">No Projects?</h1>
+                        <h1 style="font-family: Karla;font-size:medium;">No Projects?</h1>
                         {% with name="Create a project" classes="btn" type="" click="location.href='/create-project'" %}
                             {% include "components/buttonComponent.html"  %}
                         {% endwith %}
@@ -27,7 +27,7 @@
             </div>
 
             <!-- Tags -->
-            <h2 style="font-family: Cinzel;">Community</h2>
+            <h2 style="font-family: Lora;">Community</h2>
             <div class="contentContainer contentContainer--tags--homepage">
                 {% if tags %}
                     {% for tag in tags %}
@@ -37,7 +37,7 @@
                     {% endfor %}
                 {% else %}
                     <div class="noTags">
-                        <h3 style="font-family: 'Fauna One';font-size:small;">No Tags available</h3>
+                        <h3 style="font-family: Karla;font-size:small;">No Tags available</h3>
                     </div>
                 {% endif %}
             </div>
@@ -64,7 +64,7 @@
                   {% endif %}
                 {% else %}
                     <div class="yourprojects--noProjects">
-                      <h1 style="font-family: 'Fauna One';font-size:medium;">No Community Projects</h1>
+                      <h1 style="font-family: Karla;font-size:medium;">No Community Projects</h1>
                       {% with name="Create a project" classes="btn" type="" click="location.href='/create-project'" %}
                         {% include "components/buttonComponent.html"  %}
                       {% endwith %}
@@ -74,7 +74,7 @@
         </div>
         <div class="homepage--right">
             <div class="favourites--homepage">
-                <h1 style="font-family: Cinzel;">Favourites</h1>
+                <h1 style="font-family: Lora;">Favourites</h1>
                 <div class="contentContainer contentContainer--favourite--homepage">
                     {% if favorites %}
                         {% for project in favorites %}
@@ -84,7 +84,7 @@
                         {% endfor %}
                     {% else %}
                         <div class="noFavorites">
-                            <h1 style="font-family: 'Fauna One';font-size:medium;">No Favorites</h1>
+                            <h1 style="font-family: Karla;font-size:medium;">No Favorites</h1>
                         </div>
                     {% endif %}
                 </div>

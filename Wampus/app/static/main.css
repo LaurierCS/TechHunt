@@ -99,7 +99,7 @@ a {
   display: table-cell;
   vertical-align: middle;
   color: #ffffff;
-  font-family: 'Fauna One';
+  font-family: Karla;
   font-size: medium;
 }
 
@@ -179,7 +179,7 @@ a {
   background-color: #0098fe;
   border: solid #0098fe;
   color: #ffffff;
-  font-family: Cinzel;
+  font-family: Lora;
 }
 
 .btn:hover{
@@ -265,7 +265,7 @@ a {
 .profileInfo__label {
   margin: 0;
   padding: 3% 5% 0 5%;
-  font-family: 'Fauna One';
+  font-family: Karla;
   font-size: large;
 }
 
@@ -274,7 +274,7 @@ a {
   padding: 0 5% 0 5%;
   font-weight: normal;
   font-size: 15px;
-  font-family: 'Fauna One';
+  font-family: Karla;
 }
 
 /*Component modifiers*/
@@ -289,13 +289,13 @@ a {
   text-align: left;
   justify-content: flex-start;
   background-color: #eeeeee;
-  font-family: 'Fauna One';
+  font-family: Karla;
   font-size: small;
 }
 
 .inputField--search::placeholder {
   color: #6e6e6ebb;
-  font-family: 'Fauna One';
+  font-family: Karla;
   font-size: small;
 }
 
@@ -463,7 +463,7 @@ a {
   background-color: #2C2C2C;
   border: 3px solid #0098fe;
   color: #eeeeee;
-  font-family: 'Fauna One';
+  font-family: Karla;
 }
 
 .inputField--password {
@@ -481,12 +481,12 @@ a {
 
 .inputField--username::placeholder {
   color: #0098fe;
-  font-family: 'Fauna One';
+  font-family: Karla;
 }
 
 .inputField--password::placeholder {
   color: #0098fe;
-  font-family: 'Fauna One';
+  font-family: Karla;
 }
 
 .contentContainer--register {
@@ -512,7 +512,7 @@ a {
   justify-content: flex-start;
   background-color: #9E9E9E;
   border: 3px solid #6000fe;
-  font-family: 'Fauna One';
+  font-family: Karla;
 }
 
 .inputField--username--register {
@@ -525,7 +525,7 @@ a {
   justify-content: flex-start;
   background-color: #9E9E9E;
   border: 3px solid #6000fe;
-  font-family: 'Fauna One';
+  font-family: Karla;
 }
 
 .inputField--password--register {
@@ -542,17 +542,17 @@ a {
 
 .inputField--email::placeholder {
   color: #6000fe;
-  font-family: 'Fauna One';
+  font-family: Karla;
 }
 
 .inputField--username--register::placeholder {
   color: #6000fe;
-  font-family: 'Fauna One';
+  font-family: Karla;
 }
 
 .inputField--password--register::placeholder {
   color: #6000fe;
-  font-family: 'Fauna One';
+  font-family: Karla;
 }
 
 .createproject {
@@ -583,7 +583,7 @@ a {
   justify-content: flex-start;
   background-color: #ffffff;
   border: 2px solid #0098fe;
-  font-family: 'Fauna One';
+  font-family: Karla;
   font-size: small;
 }
 
@@ -598,7 +598,7 @@ a {
   justify-content: flex-start;
   background-color: #ffffff;
   border: 2px solid #0098fe;
-  font-family: 'Fauna One';
+  font-family: Karla;
   font-size: small;
   border-radius: 20px;
   resize: none;
@@ -615,7 +615,7 @@ a {
   justify-content: flex-start;
   background-color: #ffffff;
   border: 2px solid #0098fe;
-  font-family: 'Fauna One';
+  font-family: Karla;
   font-size: small;
 }
 
