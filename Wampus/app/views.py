@@ -214,7 +214,7 @@ def aboutus_view(request):
 
     return render(request, template_name, context)
 
-def landing_view(request):
+def editprofile_view(request):
     object1 = """Some object queried from the Database, 
                 maybe a project or set of project objects"""
 
@@ -227,6 +227,6 @@ def landing_view(request):
         'object1': object1
     }
 
-    template_name = 'landing.html'
+    template_name = 'edit-profile.html'
 
     return render(request, template_name, context)
