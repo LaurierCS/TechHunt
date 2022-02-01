@@ -11,17 +11,17 @@
     <div class="contentContainer contentContainer--createproject">
         <form method="POST">
             {% csrf_token %}
-            <h2 style="font-family:Karla;font-size:medium;">Title <input type="text" class="inputField inputField--title" name="title"></h2>
-            <h2 style="font-family:Karla;font-size:medium;">Description <textarea class="textarea--description" name="description"></textarea></h2>
-            <h2 style="font-family:Karla;font-size:medium;">Team Members <input type="text" class="inputField inputField--members"></h2>
-            <h2 style="font-family:Karla;font-size:medium;">Tags <input type="text" class="inputField inputField--tags"></h2>
+            <h2 style="font-family:Karla;font-size:medium;">Title <input type="text" class="inputField inputField--title" name="name" required></h2>
+            <h2 style="font-family:Karla;font-size:medium;">Description <textarea class="textarea--description" name="description" required></textarea></h2>
+            <h2 style="font-family:Karla;font-size:medium;">Team Members <input type="text" class="inputField inputField--members" name="team_members"></h2>
+            <h2 style="font-family:Karla;font-size:medium;">Tags <input type="text" class="inputField inputField--tags" name="tags"></h2>
             <div class="contentContainer contentContainer--imageButton">
                 <input type="file" id="uploadImg" hidden>
-                <label for="uploadImg" style="font-family: Karla;font-size: small;">Add Image</label>
+                <label for="uploadImg" style="font-family: Karla;font-size: small;" name="project_image">Add Image</label>
             </div>
             <div class="contentContainer contentContainer--image" id="imagePreview">
                 <img src="" alt="Image Preview" class="image-preview" hidden>
-                <span style="font-family: Karla;font-size: medium;font-style: italic;" class="image-preview__default">Image Preview</span>
+                <span style="font-family: Karla;font-size: medium;font-style: italic;" class="image-preview__default" name="preview_image">Image Preview</span>
             </div>
             
             {% with name="Create" classes="btn btn--create" type="submit" click=""%}

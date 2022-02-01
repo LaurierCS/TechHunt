@@ -32,7 +32,7 @@ class Project(models.Model):
     name = models.CharField(max_length=100, null=True)
     description = models.CharField(max_length=250, null=True, blank=True)
     preview_image = models.ImageField(null=True, blank=True)
-    rating = models.IntegerField(default=0, null=True)
+    rating = models.IntegerField(default=0, null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True)
     tags = models.ManyToManyField('Tag', blank=True)
