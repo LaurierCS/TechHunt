@@ -435,8 +435,6 @@ a {
 
 .btn--register {
   margin: 4% auto;
-  background-color: #6000fe;
-  border-color: #6000fe;
 }
 
 .contentContainer--login {
@@ -492,66 +490,70 @@ a {
 .contentContainer--register {
   margin: 0;
   width: 470px;
-  height: 350px;
-  border: 3px solid #9E9E9E;
+  height: 400px;
+  border: 3px solid #2C2C2C;
   border-radius: 7px;
-  background-color: #9E9E9E;
+  background-color: #2C2C2C;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .inputField--email {
   width: 75%;
   min-width: 50%;
-  margin: 1% 0 0 12%;
+  margin: 1% 0 0 0;
   padding: 0 0 0 1%;
   font-size: 15px;
   text-align: center;
   justify-content: flex-start;
-  background-color: #9E9E9E;
-  border: 3px solid #6000fe;
+  background-color: #2C2C2C;
+  border: 3px solid #0098fe;
   font-family: Karla;
+  color: #eeeeee;
 }
 
 .inputField--username--register {
   width: 75%;
   min-width: 50%;
-  margin: 3% 0 0 12%;
+  margin: 3% 0 0 0;
   padding: 0 0 0 1%;
   font-size: 15px;
   text-align: center;
   justify-content: flex-start;
-  background-color: #9E9E9E;
-  border: 3px solid #6000fe;
+  background-color: #2C2C2C;
+  border: 3px solid #0098fe;
   font-family: Karla;
+  color: #eeeeee;
 }
 
 .inputField--password--register {
   width: 75%;
   min-width: 50%;
-  margin: 3% 0 0 12%;
+  margin: 3% 0 0 0;
   padding: 0 0 0 1%;
   font-size: 15px;
   text-align: center;
   justify-content: flex-start;
-  background-color: #9E9E9E;
-  border: 3px solid #6000fe;
+  background-color: #2C2C2C;
+  border: 3px solid #0098fe;
+  color: #eeeeee;
 }
 
 .inputField--email::placeholder {
-  color: #6000fe;
+  color: #0098fe;
   font-family: Karla;
 }
 
 .inputField--username--register::placeholder {
-  color: #6000fe;
+  color: #0098fe;
   font-family: Karla;
 }
 
 .inputField--password--register::placeholder {
-  color: #6000fe;
+  color: #0098fe;
   font-family: Karla;
 }
 
@@ -950,4 +952,56 @@ label {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 20%);
+}
+
+.landingBackground {
+  width: 100%;
+  height: 656px;
+  margin: 0;
+  background-image: url("./images/LandingBackground.png");
+  position: relative;
+}
+
+.landingInfo {
+  width: 700px;
+  height: 400px;
+  margin: 2% 5px auto 4%;
+  padding: 1% 150px 0 2%;
+}
+
+.btn--landingPage {
+  background-image: linear-gradient(to right, #0098fe, #6000fe);
+  border: none;
+  margin: 30px 0 20px 0;
+}
+
+.aboutUs {
+  margin:0 0 0 5%;
+  padding: 0 5% 0 0;
+}
+
+.teamMember {
+  width: 50%;
+  height: 300px;
+  float: left;
+  padding: 10px 0 10px 0;
+}
+
+.memberPic {
+  width: 70%;
+  max-width: 80%;
+  height: 80%;
+  margin: 0 15% 0 15%;
+  max-height: fit-content;
+  border-radius: 50%;
+}
+
+.memberInfo {
+  width: 100%;
+  max-height: 100%;
+  height: 20%;
+  bottom:0;
+  max-height: fit-content;
+  text-align: center;
+  padding-top: 7px;
 }

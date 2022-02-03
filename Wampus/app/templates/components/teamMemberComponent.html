@@ -1,0 +1,10 @@
+{% load static %}
+
+<div class="teamMember">
+    <div style="background-color:#eeeeee;background-image: url('{{ image }}'); background-size:contain;background-repeat:no-repeat;background-position:center center;" class="memberPic"></div>
+    <div class="memberInfo">
+      <a style="font-family: Karla;font-size: large;">{{ name }}<br></a>
+      <a href="{{ github }}" ><img style="width: 20px; height: 20px;" src="../../static/images/github-logo.png"></a>
+      <a href="{{ linkedin }}" ><img style="width: 20px; height: 20px;" src="../../static/images/linkedin-logo.png"></a>
+    </div>
+</div>

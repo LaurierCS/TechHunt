@@ -5,11 +5,22 @@
 
 {% block content %}
 
-<div style="margin:0 0 0 5%;" class="aboutUs">
+<div class="aboutUs">
   <h1 style="font-family: Lora">About Us</h1>
   <a style="font-family: Karla;font-size:medium; font-size: 16px;">In this section talk a little bit about us and about the project, its aim and maybe functionality too....</a>
-  <h3 style="font-family: Lora">Contact:</h3>
-  <a style="font-family: Karla;font-size:medium; font-size: 13px;font-style: italic;">example@email.com</a>
+  <h3 style="font-family: Lora">Meet The Team:</h3>
+  {% with name="Aidan Traboulay" github="//github.com/aidantrabs" linkedin="" %}
+      {% include "components/teamMemberComponent.html" %}
+  {% endwith %}
+  {% with name="Dhavani Patel" github="//github.com/dhav15" linkedin="" image="../static/images/dhavani.jpeg" %}
+      {% include "components/teamMemberComponent.html" %}
+  {% endwith %}
+  {% with name="Jon O'Brien" github="//github.com/jonobrien99" linkedin="" %}
+      {% include "components/teamMemberComponent.html" %}
+  {% endwith %}
+  {% with name="Mobina Tooranisama" github="//github.com/MobinaToorani" linkedin="" %}
+      {% include "components/teamMemberComponent.html" %}
+  {% endwith %}
 </div>
   
 {% endblock content %}
