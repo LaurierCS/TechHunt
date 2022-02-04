@@ -90,8 +90,8 @@ class Comment(models.Model):
     # Comment Fields
     text = models.CharField(max_length=250, null=True)
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
-    project = models.ForeignKey('Project', on_delete=models.CASCADE)
-    date_created = models.DateTimeField(auto_now=True)
+    project = models.ForeignKey('Project', related_name="comments", on_delete=models.CASCADE)
+    date_created = models.DateTimeField(auto_now_add=True)
 
     # Comment Attributes
     def __str__(self):

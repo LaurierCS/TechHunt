@@ -31,7 +31,8 @@ urlpatterns = [
     path('profile/', views.profilepage_view),
     path('about-us/', views.aboutus_view),
     path('create-project/', views.createproject_view),
-    path('edit-profile/', views.editprofile_view)
+    path('edit-profile/', views.editprofile_view),
+    path('landing/', views.landing_view)
 ]
 
 """

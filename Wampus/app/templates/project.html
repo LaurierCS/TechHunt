@@ -1,32 +1,52 @@
 {% extends "base.html" %}
 
 <!-- Title -->
-{% block title %}{{project.name}}{% endblock title %}
+{% block title %}{{ project.name }}{% endblock title %}
 
 <!-- Main Page Content -->
 {% block content %}
 
 <div class="contentContainer contentContainer--individualproject--image">
-    <h1>Project Name</h1>
+    <div class="contentContainer contentContainer--projectTitle">
+        <a style="font-family: Lora;color: #ffffff;font-size: xx-large;font-weight: bold;">Project Name</a>
+    </div>
 </div>
 
 <div class="members">
-    <h2>Team Members</h2>
-    <div class="contentContainer contentContainer--individualproject--members">
-    </div>
+    <h2 style="font-family: Lora;">Team Members</h2>
+    <div class="contentContainer contentContainer--individualproject--members"></div>
 </div>
 
 <div class="description">
-    <h2>Description</h2>
-    <div class="contentContainer contentContainer--individualproject--description">
-    </div>
+    <h2 style="font-family: Lora;">Description</h2>
+    <div class="contentContainer contentContainer--individualproject--description"></div>
 </div>
 
 <div class="individualpage--bottom">
-    <h2>Tags</h2>
+    <h2 style="font-family: Lora;">Tags</h2>
     <div class="contentContainer contentContainer--tags--individualproject">
         {% include "components/tagComponent.html" %}
     </div>
+    {% with name="Delete Project" classes="btn btn--deleteProject" type="" click="" %}
+        {% include "components/buttonComponent.html"  %}
+    {% endwith %}
+</div>
+
+<div class="commentSection">
+    <h2 style="font-family: Lora;font-weight: lighter;color: #3f3f3f;">Comments</h2>
+    <hr>
+    <div class="contentContainer contentContainer--comments">
+        {% if not project.comments.all %}
+            No Comments...
+        {% else %}
+            {% for comment in project.comments.all %}
+                <strong style="font-family: Karla;font-size: medium;">{{ comment.profile }}</strong> - {{ comment.date_created }}<br/>
+                {{ comment.text }}
+                <br/><br/>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <hr>
 </div>
 
 {% endblock content %}
