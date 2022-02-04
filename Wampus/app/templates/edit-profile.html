@@ -26,14 +26,17 @@
             </div>
             <div class="bio">
                 <h2 style="font-family:Karla;font-size:medium;">Bio</h2>
-                <textarea class="textarea--bio" name="description"></textarea> 
+                <textarea class="textarea--bio" name="description"></textarea>
             </div>
         </div>
+        {% with name="Save" classes="btn btn--update" type="submit" click=""%}
+            {% include "components/buttonComponent.html"  %}
+        {% endwith %}
     </div>
     <div class="profileImgContainer">
         <div class="profileImg" style="background-image:url('../static/images/placeholder.png')"></div>
-        {% with name="Edit" classes="btn btn--editProfileImage" type="submit" click=""%}
-            {% include "components/buttonComponent.html"  %}
-        {% endwith %}
+        <input type="file" id="uploadProfileImg" hidden>
+        <label for="uploadProfileImg" class="btn btn--editProfileImage">Edit Image</label>
+        
     </div>
 {% endblock content %}

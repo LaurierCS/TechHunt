@@ -1098,3 +1098,8 @@ label {
   margin: 0;
   padding: 5%;
 }
+
+.btn--update {
+  align-self: flex-end;
+  margin: 1% 5% 0 0;
+}
