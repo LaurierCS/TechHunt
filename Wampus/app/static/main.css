@@ -697,14 +697,35 @@ label {
   text-align: left;
   justify-content: flex-start;
   background-color: #ffffff;
-  border: 2px solid #6000fe;
-  color: #6000fe;
+  border: 2px solid #eeeeee;
   border-radius: 20px;
   padding-left: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+
+.contentContainer--projectTitle {
+  width: 100%;
+  height: 20%;
+  background-color: #00000079;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: none;
+  display: flex;
+  padding-left: 4%;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .contentContainer--tags--individualproject {
-  width: 90%;
+  width: 70%;
   height: 50px;
 
   margin: 2% 0 0 0;
@@ -718,7 +739,7 @@ label {
 }
 
 .contentContainer--individualproject--description {
-  width: 90%;
+  width: 95%;
   min-width: 50%;
   height: 200px;
   max-height: 200px;
@@ -729,24 +750,34 @@ label {
   background-color: #ffffff;
   border: 2px solid #0098fe;
   border-radius: 20px;
-  padding-left: 15px;
+  padding: 15px;
+  overflow-x: auto;
 }
 
 .description {
   width: 63%;
-  margin: 0 0 1% 3%;
+  margin: 1% 0 0 4%;
   float: left;
 }
 
 .contentContainer--individualproject--members {
-  width: 90%;
+  width: 80%;
   height: 200px;
   max-height: 200px;
 
-  padding: 3px;
+  padding: 15px;
   overflow-x: auto;
   border-radius: 20px;
   border: 2px solid #0098fe;
+  overflow-x: auto;
+}
+
+.btn--deleteProject {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #6000fe;
+  border: 10px solid #6000fe;
 }
 
 .contentContainer--profileInfo--profile {
@@ -764,15 +795,17 @@ label {
 }
 
 .members {
-  width: 33%;
+  width: 30%;
   float: right;
   padding-right: 1px;
+  margin: 1% 0 0 0;
 }
 
 .individualpage--bottom {
-  width: 95%;
+  width: 90%;
   float: left;
   margin: 0 2% 1% 4%;
+  position: relative;
 }
 
 .contentContainer--searched {
@@ -981,17 +1014,16 @@ label {
 }
 
 .teamMember {
-  width: 50%;
+  width: 25%;
   height: 300px;
   float: left;
   padding: 10px 0 10px 0;
 }
 
 .memberPic {
-  width: 70%;
-  max-width: 80%;
-  height: 80%;
-  margin: 0 15% 0 15%;
+  width: 80%;
+  height: 76%;
+  margin: 0 10% 0 10%;
   max-height: fit-content;
   border-radius: 50%;
 }
@@ -1004,4 +1036,17 @@ label {
   max-height: fit-content;
   text-align: center;
   padding-top: 7px;
+}
+
+.commentSection {
+  width: 90%;
+  margin: 1% 0 0 4%;
+  float: left;
+}
+
+.contentContainer--comments {
+  width: 85%;
+  height: fit-content;
+  padding: 10px;
+  border: none;
 }
