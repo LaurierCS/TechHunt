@@ -174,7 +174,6 @@ def updateproject_view(request, pk):
         form = CreateProjectForm(request.POST, request.FILES, instance=project)
 
         if form.is_valid():
-            print('Form is valid')
             project = form.save()
             project.profile = profile
             project.save()
