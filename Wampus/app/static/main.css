@@ -1049,4 +1049,29 @@ label {
   height: fit-content;
   padding: 10px;
   border: none;
+  position: relative;
+}
+
+.textarea--commentBox {
+  width: 80%;
+  min-width: 50%;
+  height: 80px;
+  max-height: 80px;
+  padding: 15px;
+  font-size: 17px;
+  text-align: left;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  border: 2px solid #dddddd;
+  font-family: Karla;
+  font-size: small;
+  border-radius: 8px;
+  resize: none;
+  vertical-align: middle;
+}
+
+.textarea--commentBox::placeholder {
+  color: #6e6e6ebb;
+  font-family: Karla;
+  font-size: small;
 }
