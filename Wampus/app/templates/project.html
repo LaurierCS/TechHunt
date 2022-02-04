@@ -37,14 +37,14 @@
     <hr>
     <div class="contentContainer contentContainer--comments">
         <textarea class="textarea--commentBox" name="commentBox" placeholder="Add a comment..."></textarea>
-        <br/><br/>
+        <br><br>
         {% if not project.comments.all %}
             No Comments
         {% else %}
             {% for comment in project.comments.all %}
-                <strong style="font-family: Karla;font-size: medium;">{{ comment.profile }}</strong> - {{ comment.date_created }}<br/>
+                <strong style="font-family: Karla;font-size: medium;">{{ comment.profile }}</strong> - {{ comment.date_created }}<br>
                 {{ comment.text }}
-                <br/><br/>
+                <br><br>
             {% endfor %}
         {% endif %}
     </div>

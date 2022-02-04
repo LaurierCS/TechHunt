@@ -16,8 +16,7 @@
 </head>
 <style>
     body {
-            background-image: linear-gradient(#6000fe, #808080);
-            background-size: 100% 200%;
+            background-color: #000000;
         }
 </style>
 <div class="landingBackground">
@@ -32,9 +31,48 @@
         {% endwith %}
     </div>
     <img style="position:absolute;right: 0;bottom:0;margin: auto 5% 130px auto;" src="../static/images/landing-page-pic.png">
-    
 </div>
-<div class="landingInfo"></div>
-<div class="landingInfo"></div>
+<div class="landingDetails">
+    <div style="float:left;" class="landingDetails landingDetails--img">
+        <img src="../static/images/landing-page-search.png" width="45%">
+    </div>
+    <div style="float:right;" class="landingDetails landingDetails--text">
+        <h1 style="color: #ffffff;font-family: Lora;font-size: xx-large;">Start the hunt,<br>search for the right projects!</h1>
+        <a style="font-size:large;font-family: Karla;color: #868686;font-weight: lighter;">
+            Find projects of your interest with just a click. Go ahead and give it a try. Look for projects that <span style="color: #0098feb4;font-family: Karla;">you</span> want to work on.
+        </a>
+        {% with name="Start Now" classes="btn btn--landingPage" type="submit" click="location.href='/register'" %}
+            {% include "components/buttonComponent.html"  %}
+        {% endwith %}
+</div>
+<div class="landingDetails">
+    <div style="float:left;" class="landingDetails landingDetails--text">
+        <h1 style="color: #ffffff;font-family: Lora;font-size: xx-large;">Don't stop.<br>Search for the right people!</h1>
+        <a style="font-size:large;font-family: Karla;color: #868686;font-weight: lighter;">
+            Easily lets you connect with people who share the same interests as you. Join their projects and let them join yours. Work together to make it come to life.
+        </a>
+        {% with name="Start Now" classes="btn btn--landingPage" type="submit" click="location.href='/register'" %}
+            {% include "components/buttonComponent.html"  %}
+        {% endwith %}
+    </div>
+    <div style="float:right;" style="margin: 0;" class="landingDetails landingDetails--img">
+        <img style="border-radius: 50%;" src="../static/images/landing-page-connect.jpeg" width="70%">
+    </div>
+</div>
+<div class="landingDetails">
+    <div style="float:left;" class="landingDetails landingDetails--img">
+        <img src="../static/images/landing-page-create.png" width="70%">
+    </div>
+    <div style="float:right;" class="landingDetails landingDetails--text">
+        <h1 style="color: #ffffff;font-family: Lora;font-size: xx-large;">Didn't find what you want?<br>Create it yourself!</h1>
+        <a style="font-size:large;font-family: Karla;color: #868686;font-weight: lighter;">
+            Why wait for someone else? <span style="color: #0098feb4;font-family: Karla">Create</span> your own projects. <span style="color: #0098feb4;font-family: Karla">Create</span> your own teams.
+            If you have an idea, make it happen.
+        </a>
+        {% with name="Start Now" classes="btn btn--landingPage" type="submit" click="location.href='/register'" %}
+            {% include "components/buttonComponent.html"  %}
+        {% endwith %}
+    </div>
+</div>
 <!--<img src="../static/images/LandingBackground.png">-->
 </html>
