@@ -8,7 +8,7 @@
 
 <div class="contentContainer contentContainer--individualproject--image">
     <div class="contentContainer contentContainer--projectTitle">
-        <a style="font-family: Lora;color: #ffffff;font-size: xx-large;font-weight: bold;">Project Name</a>
+        <a style="font-family: Lora;color: #ffffff;font-size: xx-large;font-weight: bold;">{{ project.name }}</a>
     </div>
 </div>
 
@@ -19,7 +19,9 @@
 
 <div class="description">
     <h2 style="font-family: Lora;">Description</h2>
-    <div class="contentContainer contentContainer--individualproject--description"></div>
+    <div class="contentContainer contentContainer--individualproject--description">
+       {{ project.description }}
+    </div>
 </div>
 
 <div class="individualpage--bottom">

@@ -9,22 +9,22 @@
 <div class="createproject">
     <h1 style="font-family: Lora;">Create Project</h1>
     <div class="contentContainer contentContainer--createproject">
-        <form method="POST">
+        <form action="" method="POST">
             {% csrf_token %}
-            <h2 style="font-family:Karla;font-size:medium;">Title <input type="text" class="inputField inputField--title" name="name" required></h2>
-            <h2 style="font-family:Karla;font-size:medium;">Description <textarea class="textarea--description" name="description" required></textarea></h2>
-            <h2 style="font-family:Karla;font-size:medium;">Team Members <input type="text" class="inputField inputField--members" name="team_members"></h2>
-            <h2 style="font-family:Karla;font-size:medium;">Tags <input type="text" class="inputField inputField--tags" name="tags"></h2>
+            <h2 style="font-family:Karla;font-size:medium;" for="name">Title <input type="text" class="inputField inputField--title" name="name" required></h2>
+            <h2 style="font-family:Karla;font-size:medium;" for="description">Description <textarea class="textarea--description" name="description" required></textarea></h2>
+            <h2 style="font-family:Karla;font-size:medium;" for="team_members">Team Members <input type="text" class="inputField inputField--members" name="team_members"></h2>
+            <h2 style="font-family:Karla;font-size:medium;" for="tags">Tags <input type="text" class="inputField inputField--tags" name="tags"></h2>
             <div class="contentContainer contentContainer--imageButton">
                 <input type="file" id="uploadImg" hidden>
-                <label for="uploadImg" style="font-family: Karla;font-size: small;" name="project_image">Add Image</label>
+                <label class="uploadImgBtn" for="uploadImg" style="font-family: Karla;font-size: small;" name="project_image">Add Image</label>
             </div>
             <div class="contentContainer contentContainer--image" id="imagePreview">
                 <img src="" alt="Image Preview" class="image-preview" hidden>
                 <span style="font-family: Karla;font-size: medium;font-style: italic;" class="image-preview__default" name="preview_image">Image Preview</span>
             </div>
             
-            {% with name="Create" classes="btn btn--create" type="submit" click=""%}
+            {% with name="Create" classes="btn btn--create" type="submit" click="" %}
                 {% include "components/buttonComponent.html"  %}
             {% endwith %}
         </form>

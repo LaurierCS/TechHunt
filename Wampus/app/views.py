@@ -142,7 +142,7 @@ def project_view(request, project_name):
 
 @login_required(login_url='/login/')
 def createproject_view(request):
-    
+
     # Get current user profile
     profile = request.user.profile
     form = CreateProjectForm()
@@ -155,8 +155,13 @@ def createproject_view(request):
             project = form.save(commit=False)
             project.profile = profile
             project.save()
+            print(project.name)
+            return redirect("/project/" + project.name)
             
-    context = {'form': form }
+    context = {
+        'profile': profile,
+        'form': form 
+    }
 
     template_name = 'create-project.html'
 
@@ -214,16 +219,12 @@ def aboutus_view(request):
     return render(request, template_name, context)
 
 def editprofile_view(request):
-    object1 = """Some object queried from the Database, 
-                maybe a project or set of project objects"""
+    user = request.user # Get the user object
+     
+    profile = Profile.objects.get(user=user) # Get the user's profile
 
     context = {
-        # You place objects in here that you want to bring
-        # to the front end. You do it just by adding them
-        # to this dictionary commonly called context -
-        # simply store key and value pairs
-        # For example:
-        'object1': object1
+        'profile': profile
     }
 
     template_name = 'edit-profile.html'

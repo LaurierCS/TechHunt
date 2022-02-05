@@ -2,7 +2,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Project, Comment
+from .models import Project, Comment, Profile
 
 # Form for regsitering a new user
 class RegisterForm(UserCreationForm):
@@ -19,10 +19,13 @@ class RegisterForm(UserCreationForm):
 
 # Form for creating a new project
 class CreateProjectForm(forms.ModelForm):
+    preview_image = forms.ImageField(required=False)
+    rating = forms.IntegerField(required=False)
+    code_link = forms.CharField(required=False)
 
     class Meta:
         model = Project
-        fields =  ('name', 'description', 'preview_image', 'rating', 'tags', 'code_link', )
+        fields =  ('name', 'description', 'preview_image', 'rating', 'code_link', )
         widgets = {
             'tags': forms.CheckboxSelectMultiple(),
         }
@@ -37,3 +40,15 @@ class CommentForm(forms.ModelForm):
         labels = {
             'text': 'Add a comment',
         }
+
+# Form for edit user profile
+class EditProfileForm(forms.ModelForm):
+    first_name = forms.CharField(required=False)
+    last_name = forms.CharField(required=False)
+    user = forms.CharField(required=False)
+    contact_email = forms.EmailField(required=False)
+    bio = forms.CharField(required=False)
+    
+    class Meta:
+        model = Profile
+        fields = ('first_name', 'last_name', 'user', 'contact_email', 'bio')
