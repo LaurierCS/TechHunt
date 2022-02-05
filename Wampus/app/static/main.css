@@ -688,7 +688,7 @@ a {
   padding: 10px;
 }
 
-label {
+.uploadImgBtn {
   background-color: #6000fe;
   color: white;
   border-radius: 5px;
@@ -916,7 +916,7 @@ label {
 .inputField--firstname {
   width: 90%;
   min-width: 50%;
-  padding: 0 0 0 2%;
+  padding: 0 0 0 4%;
   font-size: 17px;
   text-align: left;
   justify-content: flex-start;
@@ -929,7 +929,7 @@ label {
 .inputField--lastname {
   width: 90%;
   min-width: 50%;
-  padding: 0 0 0 2%;
+  padding: 0 0 0 4%;
   font-size: 17px;
   text-align: left;
   justify-content: flex-start;
@@ -942,7 +942,7 @@ label {
 .inputField--username--editProfile {
   width: 90%;
   min-width: 50%;
-  padding: 0 0 0 2%;
+  padding: 0 0 0 4%;
   font-size: 17px;
   text-align: left;
   justify-content: flex-start;
@@ -955,7 +955,7 @@ label {
 .inputField--email--editProfile {
   width: 90%;
   min-width: 50%;
-  padding: 0 0 0 2%;
+  padding: 0 0 0 4%;
   font-size: 17px;
   text-align: left;
   justify-content: flex-start;

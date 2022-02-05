@@ -5,34 +5,37 @@
 
 <!-- Main Page Content -->
 {% block content %}
-    <div class="editProfile">
-        <h1 style="font-family: Lora;">Edit Profile</h1>
-        <div class="contentContainer contentContainer--editProfile">
-            <div class="firstname">
-                <h2 style="font-family:Karla;font-size:medium;">First Name</h2>
-                <input type="text" class="inputField inputField--firstname" name="first-name">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="editProfile">
+            <h1 style="font-family: Lora;">Edit Profile</h1>
+            <div class="contentContainer contentContainer--editProfile">
+                <div class="firstname">
+                    <h2 style="font-family:Karla;font-size:medium;" for="first-name">First Name</h2>
+                    <input type="text" class="inputField inputField--firstname" name="first-name" placeholder="{{ profile.first_name }}">
+                </div>
+                <div class="lastname">
+                    <h2 style="font-family:Karla;font-size:medium;" for="last-name">Last Name</h2>
+                    <input type="text" class="inputField inputField--lastname" name="last-name" placeholder="{{ profile.last_name }}">
+                </div>
+                <div class="username">
+                    <h2 style="font-family:Karla;font-size:medium;" for="username">Username</h2>
+                    <input type="text" class="inputField inputField--username--editProfile" name="username" placeholder="@{{ profile.user }}">
+                </div>
+                <div class="email">
+                    <h2 style="font-family:Karla;font-size:medium;" for="email">Email</h2>
+                    <input type="text" class="inputField inputField--email--editProfile" name="email" placeholder="{{ profile.contact_email }}">
+                </div>
+                <div class="bio">
+                    <h2 style="font-family:Karla;font-size:medium;" for='bio'>Bio</h2>
+                    <textarea class="textarea--bio" name="bio" placeholder="{{ profile.bio }}"></textarea>
+                </div>
             </div>
-            <div class="lastname">
-                <h2 style="font-family:Karla;font-size:medium;">Last Name</h2>
-                <input type="text" class="inputField inputField--lastname" name="last-name">
-            </div>
-            <div class="username">
-                <h2 style="font-family:Karla;font-size:medium;">Username</h2>
-                <input type="text" class="inputField inputField--username--editProfile" name="username">
-            </div>
-            <div class="email">
-                <h2 style="font-family:Karla;font-size:medium;">Email</h2>
-                <input type="text" class="inputField inputField--email--editProfile" name="email">
-            </div>
-            <div class="bio">
-                <h2 style="font-family:Karla;font-size:medium;">Bio</h2>
-                <textarea class="textarea--bio" name="description"></textarea>
-            </div>
+            {% with name="Save" classes="btn btn--update" type="submit" click=""%}
+                {% include "components/buttonComponent.html"  %}
+            {% endwith %}
         </div>
-        {% with name="Save" classes="btn btn--update" type="submit" click=""%}
-            {% include "components/buttonComponent.html"  %}
-        {% endwith %}
-    </div>
+    </form>
     <div class="profileImgContainer">
         <div class="profileImg" style="background-image:url('../static/images/placeholder.png')"></div>
         <input type="file" id="uploadProfileImg" hidden>
