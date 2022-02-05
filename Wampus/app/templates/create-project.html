@@ -16,12 +16,12 @@
             <h2 style="font-family:Karla;font-size:medium;" for="team_members">Team Members <input type="text" class="inputField inputField--members" name="team_members"></h2>
             <h2 style="font-family:Karla;font-size:medium;" for="tags">Tags <input type="text" class="inputField inputField--tags" name="tags"></h2>
             <div class="contentContainer contentContainer--imageButton">
-                <input type="file" id="uploadImg" hidden>
+                <input id="uploadImg" name="projectImg" type="file" accept="image/*" onchange="document.getElementById('image').src=window.URL.createObjectURL(this.files[0])" hidden>
                 <label class="uploadImgBtn" for="uploadImg" style="font-family: Karla;font-size: small;" name="project_image">Add Image</label>
             </div>
+            
             <div class="contentContainer contentContainer--image" id="imagePreview">
-                <img src="" alt="Image Preview" class="image-preview" hidden>
-                <span style="font-family: Karla;font-size: medium;font-style: italic;" class="image-preview__default" name="preview_image">Image Preview</span>
+                <img id="image" width="100%" height="100%" style="object-fit:cover; border-radius: 18px;">
             </div>
             
             {% with name="Create" classes="btn btn--create" type="submit" click="" %}
