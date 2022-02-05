@@ -37,19 +37,24 @@
 <div class="commentSection">
     <h2 style="font-family: Lora;font-weight: lighter;color: #3f3f3f;">Comments</h2>
     <hr>
-    <div class="contentContainer contentContainer--comments">
-        <textarea class="textarea--commentBox" name="commentBox" placeholder="Add a comment..."></textarea>
-        <br><br>
-        {% if not project.comments.all %}
-            No Comments
-        {% else %}
-            {% for comment in project.comments.all %}
-                <strong style="font-family: Karla;font-size: medium;">{{ comment.profile }}</strong> - {{ comment.date_created }}<br>
-                {{ comment.text }}
-                <br><br>
-            {% endfor %}
-        {% endif %}
-    </div>
+    <form action="" method="POST">
+        <div class="contentContainer contentContainer--comments">
+            <textarea class="textarea--commentBox" name="commentBox" placeholder="Add a comment..."></textarea>
+            {% with name="Post" classes="btn btn--postComment" type="" click="" %}
+                {% include "components/buttonComponent.html"  %}
+            {% endwith %}
+            <br><br>
+            {% if not project.comments.all %}
+                No Comments
+            {% else %}
+                {% for comment in project.comments.all %}
+                    <strong style="font-family: Karla;font-size: medium;">{{ comment.profile }}</strong> - {{ comment.date_created }}<br>
+                    {{ comment.text }}
+                    <br><br>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </form>
     <hr>
 </div>
 
