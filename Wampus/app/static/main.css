@@ -1073,7 +1073,8 @@ a {
   border: 2px solid #dddddd;
   font-family: Karla;
   font-size: small;
-  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   resize: none;
   vertical-align: middle;
 }
@@ -1110,4 +1111,17 @@ a {
 .btn--update {
   align-self: flex-end;
   margin: 1% 5% 0 0;
+}
+
+.btn--postComment {
+  min-width: 50%;
+  width: 80%;
+  border-radius: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: none;
+  background-color: #dddddd;
+  font-family: Lora;
+  color: #303030;
+  font-size: 16px;
 }
