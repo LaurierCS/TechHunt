@@ -37,10 +37,6 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('text', )
 
-        labels = {
-            'text': 'Add a comment',
-        }
-
 # Form for edit user profile
 class ProfileForm(forms.ModelForm):
 

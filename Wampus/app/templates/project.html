@@ -38,8 +38,9 @@
     <h2 style="font-family: Lora;font-weight: lighter;color: #3f3f3f;">Comments</h2>
     <hr>
     <form action="" method="POST">
+        {% csrf_token %}
         <div class="contentContainer contentContainer--comments">
-            <textarea class="textarea--commentBox" name="commentBox" placeholder="Add a comment..."></textarea>
+            <textarea class="textarea--commentBox" name="text" placeholder="Add a comment..."></textarea>
             {% with name="Post" classes="btn btn--postComment" type="" click="" %}
                 {% include "components/buttonComponent.html"  %}
             {% endwith %}

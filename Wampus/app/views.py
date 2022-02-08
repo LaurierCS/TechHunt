@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import RegisterForm, CreateProjectForm, EditProfileForm, ProfileForm
+from .forms import RegisterForm, CreateProjectForm, EditProfileForm, ProfileForm, CommentForm
 from django.db.models import Q
 from .models import Project, Tag, Profile, Favorite, Comment
 from .query import search_projects
@@ -131,9 +131,19 @@ def project_view(request, project_name):
     profile = Profile.objects.get(user=user) # Get the user's profile
     project = Project.objects.get(name=project_name)
 
+    form = CommentForm()
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST or None)
+        if form.is_valid():
+            text = request.POST.get('text')
+            comment = Comment.objects.create(text = text, profile = profile, project = project)
+            comment.save()
+
     context = {
         'profile': profile,
-        'project': project
+        'project': project,
+        'form': form
     }
 
     template_name = 'project.html'
