@@ -134,7 +134,7 @@ def project_view(request, project_name):
     form = CommentForm()
 
     if request.method == 'POST':
-        form = CommentForm(request.POST or None)
+        form = CommentForm(request.POST)
         if form.is_valid():
             text = request.POST.get('text')
             comment = Comment.objects.create(text = text, profile = profile, project = project)
@@ -161,11 +161,9 @@ def createproject_view(request):
         form = CreateProjectForm(request.POST, request.FILES)
 
         if form.is_valid():
-            print('Form is valid')
             project = form.save(commit=False)
             project.profile = profile
             project.save()
-            print(project.name)
             return redirect("/project/" + project.name)
             
     context = {
@@ -231,7 +229,6 @@ def aboutus_view(request):
 def editprofile_view(request):
     # Get current user profile
     profile = request.user.profile
-    print(request.user.id)
     if request.method == 'POST':
         form = EditProfileForm(request.POST, instance=request.user)
         profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)

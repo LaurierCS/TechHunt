@@ -2,7 +2,11 @@
 
 <div class="sidePanel">
     <div class="logo">
-        <img src="../../static/images/Logo2.png" height="100px" width="100px">
+        {% if profile.profile_image %}
+        <img src="{{request.user.profile.profile_image.url}}" height="100%" width="100%" style="object-fit:cover;border-radius: 50%;">
+        {% else %}
+            <img src="../../static/images/Logo2.png" height="100%" width="100%" style="object-fit:cover;border-radius: 50%;">
+        {% endif %}
     </div>
     <h1 class="sidePanel__links"><a style="font-family: Lora" href="/">Home</a></h1>
     <h1 class="sidePanel__links"><a style="font-family: Lora" href="/profile">Profile</a></h1>

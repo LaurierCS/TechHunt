@@ -5,7 +5,7 @@
 
 <!-- Main Page Content -->
 {% block content %}
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="editProfile">
             <h1 style="font-family: Lora;">Edit Profile</h1>
@@ -51,11 +51,19 @@
                 {% include "components/buttonComponent.html"  %}
             {% endwith %}
         </div>
+        <div class="profileImgContainer">
+            {% if profile.profile_image %}
+                <div class="profileImg" style="border: 1px solid black; background-image:url('{{request.user.profile.profile_image.url}}'); background-size: cover;">
+                    <img id="image" width="100%" height="100%" style="object-fit:cover; border-radius: 50%;">
+                </div>
+            {% else %}
+                <div class="profileImg" style="border: 1px solid black; background-image:url('../static/images/placeholder.png')">
+                    <img id="image" width="100%" height="100%" style="object-fit:cover; border-radius: 50%;">
+                </div>
+            {% endif %}
+            <input id="uploadProfileImg" name="profile_image" type="file" accept="image/*" onchange="document.getElementById('image').src=window.URL.createObjectURL(this.files[0])" hidden>
+            <label for="uploadProfileImg" class="btn btn--editProfileImage">Edit Image</label>
+            
+        </div>
     </form>
-    <div class="profileImgContainer">
-        <div class="profileImg" style="background-image:url('../static/images/placeholder.png')"></div>
-        <input type="file" id="uploadProfileImg" hidden>
-        <label for="uploadProfileImg" class="btn btn--editProfileImage">Edit Image</label>
-        
-    </div>
 {% endblock content %}

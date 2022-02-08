@@ -19,13 +19,13 @@ class RegisterForm(UserCreationForm):
 
 # Form for creating a new project
 class CreateProjectForm(forms.ModelForm):
-    preview_image = forms.ImageField(required=False)
+    project_image = forms.ImageField(required=False)
     rating = forms.IntegerField(required=False)
     code_link = forms.CharField(required=False)
 
     class Meta:
         model = Project
-        fields =  ('name', 'description', 'preview_image', 'rating', 'code_link', )
+        fields =  ('name', 'description', 'project_image', 'rating', 'code_link', )
         widgets = {
             'tags': forms.CheckboxSelectMultiple(),
         }
@@ -42,7 +42,7 @@ class ProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ('first_name', 'last_name', 'bio',)
+        fields = ('first_name', 'last_name', 'bio', 'profile_image')
 
 class EditProfileForm(forms.ModelForm):
     username = forms.CharField(required=True)

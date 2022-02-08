@@ -6,12 +6,19 @@
 <!-- Main Page Content -->
 {% block content %}
 
-<div class="contentContainer contentContainer--individualproject--image">
-    <div class="contentContainer contentContainer--projectTitle">
-        <a style="font-family: Lora;color: #ffffff;font-size: xx-large;font-weight: bold;">{{ project.name }}</a>
+{% if project.project_image %}
+    <div style="background-image: url('{{project.project_image.url}}');" class="contentContainer contentContainer--individualproject--image">
+        <div class="contentContainer contentContainer--projectTitle">
+            <a style="font-family: Lora;color: #ffffff;font-size: xx-large;font-weight: bold;">{{ project.name }}</a>
+        </div>
     </div>
-</div>
-
+{% else %}
+    <div style="background-image: url('../static/images/LandingBackground.png');" class="contentContainer contentContainer--individualproject--image">
+        <div class="contentContainer contentContainer--projectTitle">
+            <a style="font-family: Lora;color: #ffffff;font-size: xx-large;font-weight: bold;">{{ project.name }}</a>
+        </div>
+    </div>
+{% endif %}
 <div class="members">
     <h2 style="font-family: Lora;">Team Members</h2>
     <div class="contentContainer contentContainer--individualproject--members"></div>

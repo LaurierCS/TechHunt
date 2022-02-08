@@ -14,6 +14,7 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=50, null=True, blank=True)
     bio = models.TextField(max_length=500, null=True, blank=True)
     contact_email = models.EmailField(max_length=200, null=True, blank=True)
+    profile_image = models.ImageField(null=True, blank=True)
     location = models.CharField(max_length=50, null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
 
@@ -31,7 +32,7 @@ class Project(models.Model):
     id = models.UUIDField(primary_key=True, unique=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100, null=True)
     description = models.CharField(max_length=250, null=True, blank=True)
-    preview_image = models.ImageField(null=True, blank=True)
+    project_image = models.ImageField(null=True, blank=True)
     rating = models.IntegerField(default=0, null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True)
