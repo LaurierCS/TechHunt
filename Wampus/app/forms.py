@@ -42,13 +42,14 @@ class CommentForm(forms.ModelForm):
         }
 
 # Form for edit user profile
-class EditProfileForm(forms.ModelForm):
-    first_name = forms.CharField(required=False)
-    last_name = forms.CharField(required=False)
-    user = forms.CharField(required=False)
-    contact_email = forms.EmailField(required=False)
-    bio = forms.CharField(required=False)
-    
+class ProfileForm(forms.ModelForm):
+
     class Meta:
         model = Profile
-        fields = ('first_name', 'last_name', 'user', 'contact_email', 'bio')
+        fields = ('first_name', 'last_name', 'bio',)
+
+class EditProfileForm(forms.ModelForm):
+    username = forms.CharField(required=True)
+    class Meta:
+        model = User
+        fields = ('username', 'email')
