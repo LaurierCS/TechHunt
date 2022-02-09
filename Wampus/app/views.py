@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import RegisterForm, CreateProjectForm
+from .forms import RegisterForm, CreateProjectForm, EditProfileForm, ProfileForm, CommentForm
 from django.db.models import Q
 from .models import Project, Tag, Profile, Favorite, Comment
 from .query import search_projects
@@ -131,9 +131,19 @@ def project_view(request, project_name):
     profile = Profile.objects.get(user=user) # Get the user's profile
     project = Project.objects.get(name=project_name)
 
+    form = CommentForm()
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            text = request.POST.get('text')
+            comment = Comment.objects.create(text = text, profile = profile, project = project)
+            comment.save()
+
     context = {
         'profile': profile,
-        'project': project
+        'project': project,
+        'form': form
     }
 
     template_name = 'project.html'
@@ -151,11 +161,9 @@ def createproject_view(request):
         form = CreateProjectForm(request.POST, request.FILES)
 
         if form.is_valid():
-            print('Form is valid')
             project = form.save(commit=False)
             project.profile = profile
             project.save()
-            print(project.name)
             return redirect("/project/" + project.name)
             
     context = {
@@ -219,14 +227,24 @@ def aboutus_view(request):
     return render(request, template_name, context)
 
 def editprofile_view(request):
-    user = request.user # Get the user object
-     
-    profile = Profile.objects.get(user=user) # Get the user's profile
-
+    # Get current user profile
+    profile = request.user.profile
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        if form.is_valid() and profile_form.is_valid():
+            user_info = form.save()
+            profile.contact_email = user_info.email
+            profile_form.save()
+            return redirect("/profile/")
+    else:
+        form = EditProfileForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
     context = {
-        'profile': profile
+        'profile': profile,
+        'form': form,
+        'profile_form': profile_form
     }
-
     template_name = 'edit-profile.html'
 
     return render(request, template_name, context)

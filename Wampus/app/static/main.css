@@ -152,9 +152,10 @@ a {
 /* Components*/
 .logo {
   /*this is temporary until we have a design for the logo*/
-  width: 100px;
-  height: 100px;
-  margin: 10% 0 15% 10%;
+  width: 125px;
+  height: 125px;
+  margin: 10% 0 10% 10%;
+  border-radius: 50%;
 }
 
 .inputField {
