@@ -34,7 +34,17 @@
 <div class="individualpage--bottom">
     <h2 style="font-family: Lora;">Tags</h2>
     <div class="contentContainer contentContainer--tags--individualproject">
-        {% include "components/tagComponent.html" %}
+        {% if tags %}
+            {% for tag in project.tags %}
+                {% with name=tag.name %}
+                    {% include "components/tagComponent.html" %}
+                {% endwith %}
+            {% endfor %}
+        {% else %}
+                <div class="noTags">
+                    <h3 style="font-family: Karla;font-size:small;">No Tags available</h3>
+                </div>
+        {% endif %}
     </div>
     {% with name="Delete Project" classes="btn btn--deleteProject" type="" click="" %}
         {% include "components/buttonComponent.html"  %}

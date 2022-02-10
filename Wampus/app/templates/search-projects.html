@@ -9,13 +9,13 @@
             <div class="contentContainer contentContainer--searched ">
                 {% for project in search_results %}
                     {% if forloop.counter|divisibleby:2 %}
-                            {% with name=project.name desc=project.description %}
+                            {% with name=project.name desc=project.description id=project.id %}
                                 {% include "components/projectCardComponent.html" %}
                             {% endwith %}
                         </div>
                     {% else %}
                         <div class="project__rows">
-                            {% with name=project.name desc=project.description %}
+                            {% with name=project.name desc=project.description id=project.id %}
                                 {% include "components/projectCardComponent.html" %}
                             {% endwith %}
                    {% endif %}
