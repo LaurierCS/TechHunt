@@ -148,8 +148,6 @@ def project_view(request, project_id):
 
     template_name = 'project.html'
 
-    print(project.tags)
-
     return render(request, template_name, context)
 
 @login_required(login_url='/login/')
@@ -200,20 +198,27 @@ def updateproject_view(request, pk):
     return render(request, template_name, context)
 
 @login_required(login_url='/login/')
-def deleteproject_view(request, pk):
-    
-    # Get current user profile
-    profile = request.user.profile
-    project = Project.objects.get(pk=pk)
+def deleteproject_view(request, project_id):
+    user = request.user # Get the user object
+     
+    profile = Profile.objects.get(user=user) # Get the user's profile
+    project = Project.objects.get(id=project_id)
 
-    if request.method == 'POST':
-        project.delete()
-        
-        return redirect('profile')
+    if project.profile == profile:
+        if request.method == 'POST':
+            project.delete()
+            return redirect('/profile')
+    else:
+        return redirect('/')
 
-    template_name = ''
+    template_name = 'delete-project.html'
 
-    return render(request, template_name)
+    context = {
+        'project': project,
+        'profile': profile
+    }
+
+    return render(request, template_name, context)
 
 def aboutus_view(request):
     user = request.user # Get the user object

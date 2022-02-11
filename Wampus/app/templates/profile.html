@@ -10,22 +10,10 @@
     <div class="contentContainer contentContainer--yourProjects--profile">
         {% if projects %}
             {% for project in projects %}
-                {% if forloop.counter|divisibleby:2 %}
-                        {% with name=project.name desc=project.description id=project.id %}
-                            {% include "components/projectCardComponent.html" %}
-                        {% endwith %}
-                    </div>
-                {% else %}
-                    <div class="project__rows">
-                        {% with name=project.name desc=project.description id=project.id %}
-                            {% include "components/projectCardComponent.html" %}
-                        {% endwith %}
-                {% endif %}
+                {% with name=project.name desc=project.description id=project.id %}
+                    {% include "components/projectCardComponent.html" %}
+                {% endwith %}
             {% endfor %}
-            {% if popular_projects|length|divisibleby:2  %}
-            {% else %}
-                </div>
-            {% endif %}
         {% else %}
             <div class="yourprojects--noProjects">
               <h1 style="font-family: Karla;font-size: large;">No Projects?</h1>
