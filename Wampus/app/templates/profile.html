@@ -10,9 +10,16 @@
     <div class="contentContainer contentContainer--yourProjects--profile">
         {% if projects %}
             {% for project in projects %}
-                {% with name=project.name desc=project.description %}
-                    {% include "components/projectCardComponent.html" %}
-                {% endwith %}
+                {% if forloop.counter|divisibleby:2 %}
+                        {% with name=project.name desc=project.description id=project.id %}
+                            {% include "components/projectCardComponent.html" %}
+                        {% endwith %}
+                {% else %}
+                    <div class="project__rows">
+                        {% with name=project.name desc=project.description id=project.id %}
+                            {% include "components/projectCardComponent.html" %}
+                        {% endwith %}
+                {% endif %}
             {% endfor %}
         {% else %}
             <div class="yourprojects--noProjects">

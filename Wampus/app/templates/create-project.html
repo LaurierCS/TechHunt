@@ -9,7 +9,7 @@
 <div class="createproject">
     <h1 style="font-family: Lora;">Create Project</h1>
     <div class="contentContainer contentContainer--createproject">
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <h2 style="font-family:Karla;font-size:medium;" for="name">Title <input type="text" class="inputField inputField--title" name="name" required></h2>
             <h2 style="font-family:Karla;font-size:medium;" for="description">Description <textarea class="textarea--description" name="description" required></textarea></h2>
@@ -17,7 +17,7 @@
             <h2 style="font-family:Karla;font-size:medium;" for="tags">Tags <input type="text" class="inputField inputField--tags" name="tags"></h2>
             <div class="contentContainer contentContainer--imageButton">
                 <input id="uploadImg" name="project_image" type="file" accept="image/*" onchange="document.getElementById('image').src=window.URL.createObjectURL(this.files[0])" hidden>
-                <label class="uploadImgBtn" for="uploadImg" style="font-family: Karla;font-size: small;" name="project_image">Add Image</label>
+                <label class="uploadImgBtn" for="uploadImg" style="font-family: Karla;font-size: small;">Add Image</label>
             </div>
             
             <div class="contentContainer contentContainer--image" id="imagePreview">

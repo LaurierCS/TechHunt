@@ -19,7 +19,6 @@ class RegisterForm(UserCreationForm):
 
 # Form for creating a new project
 class CreateProjectForm(forms.ModelForm):
-    project_image = forms.ImageField(required=False)
     rating = forms.IntegerField(required=False)
     code_link = forms.CharField(required=False)
 
