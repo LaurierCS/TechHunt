@@ -125,11 +125,11 @@ def profilepage_view(request):
     return render(request, template_name, context)
 
 
-def project_view(request, project_name):
+def project_view(request, project_id):
     user = request.user # Get the user object
      
     profile = Profile.objects.get(user=user) # Get the user's profile
-    project = Project.objects.get(name=project_name)
+    project = Project.objects.get(id=project_id)
 
     form = CommentForm()
 
@@ -148,6 +148,8 @@ def project_view(request, project_name):
 
     template_name = 'project.html'
 
+    print(project.tags)
+
     return render(request, template_name, context)
 
 @login_required(login_url='/login/')
@@ -164,7 +166,7 @@ def createproject_view(request):
             project = form.save(commit=False)
             project.profile = profile
             project.save()
-            return redirect("/project/" + project.name)
+            return redirect("/project/" + str(project.id))
             
     context = {
         'profile': profile,

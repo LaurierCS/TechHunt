@@ -12,7 +12,7 @@
             <div class="contentContainer contentContainer--yourProjects--homepage">
                 {% if projects %}
                     {% for project in projects %}
-                        {% with name=project.name desc=project.description %}
+                        {% with name=project.name desc=project.description id=project.id %}
                             {% include "components/projectCardComponent.html" %}
                         {% endwith %}
                     {% endfor %}
@@ -47,13 +47,13 @@
                 {% if popular_projects %}
                   {% for project in popular_projects %}
                     {% if forloop.counter|divisibleby:2 %}
-                            {% with name=project.name desc=project.description %}
+                            {% with name=project.name desc=project.description id=project.id %}
                                 {% include "components/projectCardComponent.html" %}
                             {% endwith %}
                         </div>
                     {% else %}
                         <div class="project__rows">
-                            {% with name=project.name desc=project.description %}
+                            {% with name=project.name desc=project.description id=project.id %}
                                 {% include "components/projectCardComponent.html" %}
                             {% endwith %}
                     {% endif %}
@@ -78,7 +78,7 @@
                 <div class="contentContainer contentContainer--favourite--homepage">
                     {% if favorites %}
                         {% for project in favorites %}
-                            {% with name=project.project.name desc=project.project.description %}
+                            {% with name=project.project.name desc=project.project.description id=project.id %}
                                 {% include "components/projectCardComponent.html" %}
                             {% endwith %}
                         {% endfor %}
