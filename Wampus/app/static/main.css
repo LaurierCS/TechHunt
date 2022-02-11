@@ -198,7 +198,7 @@ a {
 .projectCard {
   min-width: 330px;
   min-height: 225px;
-  width:360px;
+  width:330px;
   height: 225px;
   display: flex;
   margin: 2% 2% 2% 2%;
@@ -354,6 +354,7 @@ a {
   max-height: 500px;
   height: fit-content;
   margin: 2% 0 0 0;
+  padding: 0 auto 0 auto;
   overflow-x: auto;
 }
 
@@ -823,13 +824,11 @@ a {
   height: fit-content;
   min-height: 250px;
   margin: 2% 0 0 2%;
-  text-align: center;
 }
 
 .project__rows{
   display: flex;
   flex-direction: row;
-  justify-content: center;
 }
 
 .inputField--tags {
