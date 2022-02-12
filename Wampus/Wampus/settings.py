@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'app.apps.AppConfig', #Added main app
+    'app.apps.AppConfig',  # Added main app
 ]
 
 MIDDLEWARE = [
@@ -50,6 +50,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Wampus.urls'
@@ -139,7 +142,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
-MEDIA_URL = '/media/' #base url to serve media files
+MEDIA_URL = '/media/'  # base url to serve media files
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 
