@@ -205,6 +205,7 @@ a {
   flex-direction: column;
   background-color: #eeeeee;
   border-radius: 10px;
+  text-align: left;
 }
 
 .project__text {
@@ -654,8 +655,12 @@ a {
 .contentContainer--yourProjects--profile {
   width: 98%;
   height: 565px;
+  max-width: 98%;
   max-height: 900px;
   margin: 2% 0 0 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   overflow-x: auto;
 }
 
@@ -819,6 +824,7 @@ a {
 }
 
 .contentContainer--searched {
+  text-align: center;
   width: 65%;
   height: fit-content;
   min-height: 250px;
@@ -826,6 +832,7 @@ a {
 }
 
 .project__rows{
+  width: 100%;
   display: flex;
   flex-direction: row;
 }
@@ -1124,4 +1131,26 @@ a {
   font-family: Lora;
   color: #303030;
   font-size: 16px;
+}
+
+.delete-form{
+  display: flex;
+  text-align: center;
+  margin: 10% 0 0 0;
+  justify-content: center;
+}
+
+.contentContainer--deleteProject{
+  margin: 5% auto auto auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1% 0 0 0;
+  text-align: center;
+  align-items: center;
+}
+
+.btn--delete {
+  background-color: #6000fe;
+  border: 10px solid #6000fe;
+  margin: 0 0 10% 0;
 }

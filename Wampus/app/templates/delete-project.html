@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+<!-- Title -->
+{% block title %}Delete Project{% endblock title %}
+
+<!-- Main Page Content -->
+{% block content %}
+    <div class="contentContainer contentContainer--deleteProject">
+        <h1>Are you sure you want to delete {{project.name}}?</h1>
+        <form action="" method="POST" class="delete-form">
+            {% csrf_token %}
+            {% with name="Delete Project" classes="btn btn--delete" type="" click="" %}
+                {% include "components/buttonComponent.html"  %}
+            {% endwith %}
+        </form>
+        {% with name="Cancel" classes="btn" type="" click="window.location='/profile'" %}
+            {% include "components/buttonComponent.html"  %}
+        {% endwith %}
+    </div>
+{% endblock content %}
