@@ -715,6 +715,7 @@ a {
   border: 2px solid #eeeeee;
   border-radius: 20px;
   padding-left: 15px;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
