@@ -76,10 +76,21 @@ WSGI_APPLICATION = 'Wampus.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd7erjjm2ii6une',
+        'HOST': 'ec2-54-224-64-114.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'zopbyjvzldnvrw',
+        'PASSWORD': '9126d19d2e58340951cf9e09e073631ad48019e8aa368218f3b27b5f9167ef2d',
     }
 }
 
@@ -108,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'EST'
 
 USE_I18N = True
 
