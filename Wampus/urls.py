@@ -22,8 +22,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns # For Develo
 
 urlpatterns = [
     path('admin/', admin.site.urls), # Do Not Remove
-    path('', views.homepage_view),
+    path('', views.landing_view),
     path('login/', views.login_view),
+    path('home/', views.homepage_view),
     path('search/', views.search_projects_view, name='search-projects'),
     path('logout/', views.logout_view),
     path('register/', views.register_view),
@@ -32,8 +33,7 @@ urlpatterns = [
     path('profile/', views.profilepage_view),
     path('about-us/', views.aboutus_view),
     path('create-project/', views.createproject_view),
-    path('edit-profile/', views.editprofile_view),
-    path('landing/', views.landing_view)
+    path('edit-profile/', views.editprofile_view)
 ]
 
 """
