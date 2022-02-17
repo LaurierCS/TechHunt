@@ -1,24 +1,53 @@
-# Pod 2 - Project Wampus - Open Source Kickstarter Project
-This is the repository your team will collaborate on and upload code progress to. While it is managed by your team, each code "Merge Request" (aka Pull Request PR) to master will need to be approved by at least two teammates to be approved. 
+<p align="center">
+ <img src="/assets/images/Logo.png">
+</p>
 
+<p align="center"> Open source kickstarter application that allows software developers
+to search for, upload, favorite, comment and request to join other open source projects.</p>
 
-*Outline created by Jagveer*
- 🙂
+<h3 align="center">Live Preview:
+<a href="https://techunt.herokuapp.com/" target="_blank">Tech Hunt</a> :pushpin:
+</h3>
 
-# About
+## Prerequisites :open_file_folder:
 
-# Vision / Description
+* Python v3+
 
-### Overview
+## Installation :hammer:
 
-### Getting a little more in-depth
+Install Virtual Environment :
+```
+$ pip install pipenv
+```
 
-The web app will need to have the following basic functionalities at minimum:
+Set env version :
+```
+$ pipenv --python 3.9
+```
 
--
--
--
+Activate env :
+```
+$ pipenv shell 
+```
 
-# Requirements
+Install dependencies :
+```
+$ pipenv install -r requirements.txt
+```
 
-# *Icing on top* addons
+## Usage :stars:
+
+To run the server on localhost.
+
+```
+$ python manage.py runserver
+```
+
+## Technologies :computer:
+![](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
