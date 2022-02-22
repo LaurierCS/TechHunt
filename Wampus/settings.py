@@ -93,11 +93,11 @@ WSGI_APPLICATION = 'Wampus.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd7erjjm2ii6une',
-        'HOST': 'ec2-54-224-64-114.compute-1.amazonaws.com',
+        'NAME': 'd5is2tt1lssasv',
+        'HOST': 'ec2-52-45-83-163.compute-1.amazonaws.com',
         'PORT': 5432,
-        'USER': 'zopbyjvzldnvrw',
-        'PASSWORD': '9126d19d2e58340951cf9e09e073631ad48019e8aa368218f3b27b5f9167ef2d',
+        'USER': 'jjzgakyliarjsb',
+        'PASSWORD': '3368bb3207a77476c9f423dec16db4f6ad49a1bb1fea3aab594290c3626234b6',
     }
 }
 
