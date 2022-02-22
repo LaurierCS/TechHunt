@@ -14,7 +14,7 @@ def login_view(request):
 
     # If the user is already logged in, redirect to homepage
     if request.user.is_authenticated:
-        return redirect('/homepage/')
+        return redirect('/home/')
 
     # Get user input from the login form
     if request.method == 'POST':
@@ -27,7 +27,7 @@ def login_view(request):
         # If the user is authenticated, log them in
         if user is not None:
             login(request, user)
-            return redirect('/homepage/')
+            return redirect('/home/')
 
         else:  # If the user is not authenticated, show an error message
             messages.error(request, 'Invalid username or password')
@@ -49,7 +49,7 @@ def register_view(request):
     if form.is_valid():    
         user = form.save() # If the form is valid, save the user
         login(request, user) # Log the user in
-        return redirect('/homepage/') # Redirect to homepage 
+        return redirect('/home/') # Redirect to homepage 
 
     context = {'form': form }
 
@@ -86,7 +86,7 @@ def search_projects_view(request):
     profile = Profile.objects.get(user=user) # Get the user's profile
 
     if request.method == "GET":
-        return redirect('/homepage/')
+        return redirect('/home/')
 
     if request.method == "POST":
         search_value = request.POST['search_value']
@@ -209,7 +209,7 @@ def deleteproject_view(request, project_id):
             project.delete()
             return redirect('/profile')
     else:
-        return redirect('/homepage/')
+        return redirect('/home/')
 
     template_name = 'delete-project.html'
 
